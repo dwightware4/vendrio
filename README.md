@@ -1,6 +1,6 @@
 # Vendrio
 
-[Heroku link][heroku]
+[Link to Live App][heroku]
 
 [heroku]: http://www.vendrio.it
 
