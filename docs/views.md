@@ -1,26 +1,38 @@
 # View Wireframes
 
-## New User
-![new-user]
-
-## New Session
-![new-session]
-
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
-
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
-
-## NoteBookForm
-![notebook-form]
-
 ## Page Flow
 ![page-flow]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+## Home Page
+![home-page]
+
+## Sign In Page
+![sign-in]
+
+## Sign Up Page
+![sign-up]
+
+## About Page
+![about-page]
+
+## Contact Page
+![contact-page]
+
+## New Post
+![new-post]
+
+## Edit Post
+![edit-post]
+
+## Post
+![post]
+
 [page-flow]: ./wireframes/PageFlow.png
+[home-page]: ./wireframes/HomePage.png
+[sign-in]: ./wireframes/SignIn.png
+[sign-up]: ./wireframes/SignUp.png
+[about-page]: ./wireframes/AboutPage.png
+[contact-page]: ./wireframes/ContactPage.png
+[new-post]: ./wireframes/NewPost.png
+[edit-post]: ./wireframes/EditPost.png
+[post]: ./wireframes/Post.png
