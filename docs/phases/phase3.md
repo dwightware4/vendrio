@@ -1,39 +1,32 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Categories and Search (2 days)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
+* Category
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::CategoriesController (create, index, show)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* categories/index.json.jbuilder
+* categories/show.json.jbuilder
+
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
+* CategoriesIndex
+  - CategoryIndexItem
 * SearchIndex
 
 ### Stores
-* Notebook
+* Category
 
 ### Actions
-* ApiActions.receiveAllNotebooks
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
+* ApiActions.receiveAllCategories
+* ApiActions.receiveSingleCategory
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.fetchAllCategories
+* ApiUtil.fetchSingleCategory
 
 ## Gems/Libraries
