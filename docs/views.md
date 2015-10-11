@@ -27,6 +27,9 @@
 ## Post
 ![post]
 
+## Category
+![category]
+
 [page-flow]: ./wireframes/PageFlow.png
 [home-page]: ./wireframes/HomePage.png
 [sign-in]: ./wireframes/SignIn.png
@@ -36,3 +39,4 @@
 [new-post]: ./wireframes/NewPost.png
 [edit-post]: ./wireframes/EditPost.png
 [post]: ./wireframes/Post.png
+[category]: ./wireframes/Category.png
