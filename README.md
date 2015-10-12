@@ -28,7 +28,7 @@ Vendrio is an online marketplace inspired in part by Craigslist and in part by R
 
 ### Phase 1: User Authentication, Post Model, and JSON API (1.5 days)
 
-In Phase 1 I will implement user authentication to permit login, logout, and user account creation. I will store the passwords as a hashed digest using BCrypt, and will create a Dashboard page that logged in users will be direct to upon successfully logging in or creating a new account.I will then build a full JSON API for Posts.
+Phase 1 will implement user authentication to permit login, logout, and user account creation. I will store the passwords as a hashed digest using BCrypt, and will create a Dashboard page that logged in users will be directed to upon successfully logging in or creating a new account. I will then build a full JSON API for Posts.
 
 [Details][phase-one]
 
