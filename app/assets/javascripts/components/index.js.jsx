@@ -1,27 +1,28 @@
 window.Index = React.createClass({
   render: function(){
     return(
-        <ul>
-          {this.state.benches.map(function(bench){
-            return(
-              <li key={bench.id}>
-                {bench.description}, {bench.seating}
-              </li>
-            );
-          })}
-        </ul>
-    )
+      <ul>
+        {this.state.posts.map(function(post){
+          return(
+            <li key={post.id}>
+              {post.title}
+            </li>
+          );
+        })}
+      </ul>
+    );
   },
 
   getInitialState: function() {
-    return {benches: BenchStore.all()};
+    return {posts: PostStore.all()};
   },
 
   componentDidMount: function(){
-    BenchStore.addChangeListener(this._updateState);
+    PostStore.addChangeListener(this._updateState);
+    ApiUtil.fetchPosts();
   },
 
   _updateState: function(newBenches){
-    this.setState({benches: BenchStore.all()});
+    this.setState({posts: PostStore.all()});
   }
 });

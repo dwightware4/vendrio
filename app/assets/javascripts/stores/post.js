@@ -21,6 +21,7 @@
     dispatcherID: AppDispatcher.register(function(payload){
       if(payload.actionType === PostConstants.POSTS_RECEIVED){
         resetPosts(payload.posts);
+        PostStore.emit(CHANGE_EVENT);
       }
     })
   });
