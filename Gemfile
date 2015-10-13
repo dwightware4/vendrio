@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'cowsay'
 gem 'puma'
+gem 'react-rails', '~> 1.3.0'
+gem 'flux-rails-assets'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
@@ -23,4 +25,5 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'spring'
+  gem'annotate'
 end

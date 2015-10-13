@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if signed_in?
-      redirect_to user_url(current_user)
+      redirect_to root_url
     else
     render :new
     end
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     user = User.find_by_credentials(user_params)
     if user
       sign_in(user)
-      redirect_to user_url(user)
+      redirect_to root_url
     else
       flash.now[:errors] = ["User not found"]
       render :new
