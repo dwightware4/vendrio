@@ -14,7 +14,6 @@
   </ul>
 <% end %>
 <body class="main">
-  <h1>This is the application.html.erb file</h1>
   <% if signed_in? %>
     <%= button_to "Sign Out", session_url, method: "delete" %>
   <% end %>
