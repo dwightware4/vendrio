@@ -1,15 +1,17 @@
-<h1>Sign In!</h1>
-<form action="<%= session_url %>" method="post">
-  <%= auth_token %>
+<h1>Welcome Back to Vendrio!</h1>
 
-  <label for="username">Username:
-    <input type="text" name="user[username]" value="">
-  </label><br>
+<div class="user_auth_form">
+  <form action="<%= session_url %>" method="post">
+    <%= auth_token %>
 
-  <label for="password">Password:
-    <input type="password" name="user[password]" value="">
-  </label><br>
+      <input class="user_name" type="text" name="user[username]" value="Username">
 
-  <input type="submit" value="Sign In">
-</form><br>
-<%= link_to "Sign Up!", new_user_url %>
+      <input class="pass" type="password" name="user[password]">
+
+    <input class="user_auth_button" type="submit" value="Sign In">
+  </form><br>
+
+  <div class="link">
+    <%= link_to "Sign Up", new_user_url %>
+  </div>
+</div>

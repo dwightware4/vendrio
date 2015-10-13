@@ -1,22 +1,22 @@
-<% title = user.persisted? ? "Update Profile" : "Sign Up" %>
 <% action = user.persisted? ? user_url(user) : users_url %>
 <% method = user.persisted? ? "PUT" : "POST" %>
 <% button_text = user.persisted? ? "Sign In" : "Sign Up" %>
 
-<h1><%= title %></h1>
+<h1>Welcome to Vendrio!</h1>
 
-<form action="<%= action %>" method="post">
-  <input type="hidden" name="_method" value="<%= method %>">
-  <%= auth_token %>
-  <label for="username">Username:
-    <input type="text" name="user[username]" value="<%= user.username %>">
-  </label><br>
+<div class="user_auth_form">
+  <form action="<%= action %>" method="post">
+    <input type="hidden" name="_method" value="<%= method %>">
+    <%= auth_token %>
 
-  <label for="password">Password:
-    <input type="password" name="user[password]">
-  </label><br>
+    <input class="user_name" type="text" name="user[username]" value="Username">
 
-  <input type="submit" value="<%= button_text %>">
+    <input class="pass" type="password" name="user[password]">
 
-</form><br>
-<%= link_to "Sign In", new_session_url %>
+    <input class="user_auth_button" type="submit" value="<%= button_text %>">
+
+  </form><br>
+  <div class="link">
+    <%= link_to "Sign In", new_session_url %>
+  </div>
+</div>

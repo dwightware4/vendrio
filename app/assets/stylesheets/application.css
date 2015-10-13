@@ -1,4 +1,62 @@
 .main {
-  background-image: url('background.jpg');
+  background-image: url('background.jpeg');
   background-size: cover;
+}
+
+.user_auth_form {
+  background-color: black;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  width: 500px;
+  height: 200px;
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  color: white;
+  font-family: sans-serif;
+  border-radius: 50px;
+}
+
+.user_name {
+  margin-left: 80px;
+  margin-top: 95px;
+  position: absolute;
+  float: left;
+  clear: both;
+  color: gray;
+}
+
+.pass {
+  margin-top: 95px;
+  margin-left: 265px;
+  position: absolute;
+  float: left;
+  clear: both;
+}
+
+.user_auth_button {
+  margin-left: 210px;
+  margin-top: 130px;
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.link {
+  color: white;
+  margin-left: 215px;
+}
+
+.user-profile {
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
 }
