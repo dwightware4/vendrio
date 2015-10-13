@@ -6,7 +6,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
-location    | string    | not null
+latitude    | float     | not null
+longitude   | float     | not null
 price       | integer   | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 category_id | integer   | not null, foreign key (references categories), indexed
@@ -29,6 +30,6 @@ session_token   | string    | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-user_id         | intteger  | not null, foreign key (references users), indexed, unique w/post_id
+user_id         | integer   | not null, foreign key (references users), indexed, unique w/post_id
 post_id         | integer   | not null, foreign key (references posts), indexed, unique w/user_id
 value           | integer   | not null,
