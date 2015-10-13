@@ -8,5 +8,18 @@ ApiUtil = {
         ApiActions.receivePosts(posts);
       }
     });
+  },
+
+  createPost: function(options) {
+    $.ajax({
+      url: 'api/posts',
+      type: 'POST',
+      dataType: 'json',
+      data: options,
+
+      success: function(posts) {
+        ApiActions.receivePosts(posts);
+      }
+    });
   }
 };

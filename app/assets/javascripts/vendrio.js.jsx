@@ -13,9 +13,11 @@ $(function() {
       );
     }
   });
+
   var routes = (
       <Route path="/" component={App}>
         <IndexRoute component={Index}/>
+        <Route path="new" component={PostForm}/>
       </Route>
   );
   React.render(<Router>{routes}</Router>, root);
