@@ -1,0 +1,22 @@
+<% title = (type == :new_user) ? "Sign Up!" : "Sign In!" %>
+<% action = (type == :new_user) ? users_url : user_url(user) %>
+<% method = (type == :new_user) ? "PUT" : "POST" %>
+<% button_text = (type == :new_user) ? "Sign Up" : "Sign In" %>
+
+<h1><%= title %></h1>
+
+<form action="<%= action %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <%= auth_token %>
+  <label for="username">Username:
+    <input type="text" name="user[username]" value="<%= user.username %>">
+  </label><br>
+
+  <label for="password">Password:
+    <input type="password" name="user[password]">
+  </label><br>
+
+  <input type="submit" value="<%= button_text %>">
+
+</form><br>
+<%= link_to "Sign Up", new_user_url %>
