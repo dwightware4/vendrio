@@ -6,7 +6,7 @@ window.PostShow = React.createClass({
         <h1>{this.state.post.description}</h1><br/>
         <a href="#">Home</a>
         <form onSubmit={this.deletePost}>
-          <input type="submit" value="Delete Post"/>
+          <input onSubmit={this.deletePost} type="submit" value="Delete Post"/>
         </form>
       </div>
     );
@@ -18,6 +18,5 @@ window.PostShow = React.createClass({
 
   deletePost: function() {
     e.preventDefault();
-    debugger;
   },
 });
