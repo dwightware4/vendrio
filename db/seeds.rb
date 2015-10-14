@@ -27,3 +27,8 @@ Post.create(
   user_id: 1,
   category_id: 1
 )
+
+User.create(
+  username: "Guest",
+  password: "password"
+)
