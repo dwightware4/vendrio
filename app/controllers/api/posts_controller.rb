@@ -11,13 +11,15 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    post = Post.create!(post_params)
-    render json: post
+    post = Post.new(post_params)
+    post.user_id = current_user.id
+    post.save!
+    render json: Post.all
   end
 
   private
 
   def post_params
-    params.require(:posts).permit(:title, :description, :latitude, :longitude, :price)
+    params.permit(:title, :description, :latitude, :longitude, :price, :category_id)
   end
 end

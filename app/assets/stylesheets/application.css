@@ -3,6 +3,16 @@
   background-size: cover;
 }
 
+body {
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: white;
+}
+
 .user_auth_form {
   background-color: black;
   left: 50%;

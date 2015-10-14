@@ -16,8 +16,9 @@ $(function() {
 
   var routes = (
       <Route path="/" component={App}>
-        <IndexRoute component={Index}/>
+        <IndexRoute component={Dashboard}/>
         <Route path="new" component={PostForm}/>
+        <Route path="post/:postId" component={PostShow} />
       </Route>
   );
   React.render(<Router>{routes}</Router>, root);
