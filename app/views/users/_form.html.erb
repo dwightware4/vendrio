@@ -3,20 +3,20 @@
 <% button_text = user.persisted? ? "Sign In" : "Sign Up" %>
 
 <h1>Welcome to Vendrio!</h1>
+<div class="row">
+  <div class="col-xs-4">
+    <form action="<%= action %>" method="post">
+      <input type="hidden" name="_method" value="<%= method %>">
+      <%= auth_token %>
 
-<div class="user_auth_form">
-  <form action="<%= action %>" method="post">
-    <input type="hidden" name="_method" value="<%= method %>">
-    <%= auth_token %>
-
-    <input class="user_name" type="text" name="user[username]" value="Username">
-
-    <input class="pass" type="password" name="user[password]">
-
-    <input class="user_auth_button" type="submit" value="<%= button_text %>">
-
-  </form><br>
-  <div class="link">
-    <%= link_to "Sign In", new_session_url %>
+      <div class="form-group">
+        <input class="form-control" type="text" name="user[username]">
+        <input class="form-control" type="password" name="user[password]">
+        <input class="form-control, btn, btn-primary" type="submit" value="<%= button_text %>">
+      </div>
+    </form><br>
+    <div>
+      <%= link_to "Sign In", new_session_url %>
+    </div>
   </div>
 </div>
