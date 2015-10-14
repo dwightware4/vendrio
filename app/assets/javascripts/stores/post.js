@@ -18,6 +18,15 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
+    find: function (id) {
+      var targetPost;
+      _posts.forEach(function(post) {
+        if(post.id === id) { targetPost = post; }
+      });
+
+      return targetPost;
+    },
+
     dispatcherID: AppDispatcher.register(function(payload){
       if(payload.actionType === PostConstants.POSTS_RECEIVED){
         resetPosts(payload.posts);

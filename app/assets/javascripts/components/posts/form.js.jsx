@@ -1,5 +1,5 @@
 window.PostForm = React.createClass({
-
+  mixins: [ReactRouter.History],
   render: function(){
     return(
       <div>
@@ -55,5 +55,6 @@ window.PostForm = React.createClass({
     }
 
     ApiUtil.createPost(options);
+    this.history.pushState(null, '/', {});
   },
 });
