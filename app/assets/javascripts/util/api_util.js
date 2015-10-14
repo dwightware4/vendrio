@@ -48,4 +48,15 @@ ApiUtil = {
       }
     });
   },
+
+  fetchCategories: function() {
+    $.ajax({
+      url: 'api/categories',
+      dataType: 'json',
+
+      success: function(categories) {
+        ApiActions.receiveCategories(categories);
+      }
+    });
+  },
 };

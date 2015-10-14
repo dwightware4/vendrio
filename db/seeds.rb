@@ -28,7 +28,15 @@ Post.create(
   category_id: 1
 )
 
-User.create(
-  username: "Guest",
-  password: "password"
-)
+User.create(username: "Guest", password: "password")
+
+Category.create(title: "Cars & Trucks")
+Category.create(title: "Electronics")
+Category.create(title: "Tools")
+Category.create(title: "Free")
+Category.create(title: "Motorcycles")
+Category.create(title: "Furniture")
+Category.create(title: "Sporting Goods")
+Category.create(title: "Video Games")
+Category.create(title: "Clothing")
+Category.create(title: "Event Tickets")

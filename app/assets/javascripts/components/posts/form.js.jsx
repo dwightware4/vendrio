@@ -1,5 +1,10 @@
 window.PostForm = React.createClass({
   mixins: [ReactRouter.History],
+
+  getInitialState: function() {
+    return {categories: CategoryStore.all()};
+  },
+
   render: function(){
     return(
       <div>
@@ -27,11 +32,12 @@ window.PostForm = React.createClass({
 
         <label>Category:
             <select name="category">
-              <option value="0"></option>
-              <option value="1">Autos</option>
-              <option value="2">Electronics</option>
-              <option value="3">House</option>
-              <option value="4">Games</option>
+              <option value="-1">Select Category</option>
+              {
+                this.state.categories.map(function(category){
+                  return <option value="{category.id}">{category.title}</option>
+                })
+              }
             </select>
           </label><br/>
 
