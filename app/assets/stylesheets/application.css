@@ -71,7 +71,7 @@ a {
   -moz-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
   width: 500px;
-  height: 200px;
+  height: 160px;
   -moz-opacity: 0.8;
   -khtml-opacity: 0.8;
   opacity: 0.8;
@@ -82,7 +82,7 @@ a {
 
 .user_name {
   margin-left: 80px;
-  margin-top: 95px;
+  margin-top: 40px;
   position: absolute;
   float: left;
   clear: both;
@@ -90,8 +90,8 @@ a {
 }
 
 .pass {
-  margin-top: 95px;
   margin-left: 265px;
+  margin-top: 40px;
   position: absolute;
   float: left;
   clear: both;
@@ -99,7 +99,7 @@ a {
 
 .user_auth_button {
   margin-left: 210px;
-  margin-top: 130px;
+  margin-top: 75px;
 }
 
 h1 {
@@ -111,7 +111,7 @@ h1 {
 
 .link {
   color: white;
-  margin-left: 215px;
+  margin-left: 160px;
 }
 
 .user-profile {
