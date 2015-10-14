@@ -2,7 +2,10 @@ window.EditPost = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function() {
-    return {post: PostStore.find(parseInt(this.props.params.postId))};
+    return {
+      post: PostStore.find(parseInt(this.props.params.postId)),
+      categories: CategoryStore.all()
+    };
   },
 
   render: function(){
@@ -30,15 +33,16 @@ window.EditPost = React.createClass({
             <input type="text" name="longitude" defaultValue={this.state.post.longitude}></input>
           </label><br/>
 
-        <label>Category:
-            <select name="category">
-              <option value="0"></option>
-              <option value="1">Autos</option>
-              <option value="2">Electronics</option>
-              <option value="3">House</option>
-              <option value="4">Games</option>
-            </select>
-          </label><br/>
+          <label>Category:
+              <select name="category">
+                <option value="-1">Select Category</option>
+                {
+                  this.state.categories.map(function(category){
+                    return <option value={category.id} selected={category.id === this.state.post.category_id ? 'selected' : false}>{category.title}</option>
+                  }.bind(this))
+                }
+              </select>
+            </label><br/>
 
           <input type="submit" />
 

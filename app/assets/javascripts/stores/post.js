@@ -11,6 +11,18 @@
       return _posts.slice(0);
     },
 
+    postsByCategory: function(category) {
+      var posts = [];
+
+      _posts.forEach(function(post){
+        if(post.category_id === category){
+          posts.push(post);
+        }
+      });
+
+      return posts;
+    },
+
     addChangeListener: function(callback){
       this.on(CHANGE_EVENT, callback);
     },
