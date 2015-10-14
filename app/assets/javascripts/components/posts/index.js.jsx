@@ -19,7 +19,6 @@ window.PostIndex = React.createClass({
 
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
-    ApiUtil.fetchPosts();
   },
 
   componentWillUnmount: function() {

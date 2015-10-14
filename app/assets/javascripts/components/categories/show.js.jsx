@@ -21,4 +21,17 @@ window.CategoryShow = React.createClass({
       posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))
     };
   },
+
+  componentDidMount: function() {
+    PostStore.addChangeListener(this._updateState);
+    ApiUtil.fetchPosts();
+  },
+
+  componentWillUnmount: function() {
+    PostStore.removeChangeListener(this._updateState);
+  },
+
+  _updateState: function(){
+    this.setState({posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))});
+  },
 });

@@ -1,42 +1,65 @@
+cat1 = Category.create(title: "Cars & Trucks")
+cat2 = Category.create(title: "Electronics")
+cat3 = Category.create(title: "Tools")
+
+user1 = User.create(username: "Guest", password: "password")
+
 Post.create(
-  title: "First Test Post",
-  description: "First test description",
+  title: "Toyota Tacoma",
+  description: "2012, fully loaded!",
   latitude: 37.781114,
   longitude: -122.411635,
-  price: 10,
-  user_id: 1,
-  category_id: 1
+  price: 20000,
+  user_id: user1.id,
+  category_id: cat1.id
 )
 
 Post.create(
-  title: "Second Test Post",
-  description: "Second test description",
+  title: "Laptop",
+  description: "Macbook Air",
   latitude: 37.781114,
   longitude: -123.411635,
-  price: 10,
-  user_id: 1,
-  category_id: 1
+  price: 700,
+  user_id: user1.id,
+  category_id: cat2.id
 )
 
 Post.create(
-  title: "Third Test Post",
-  description: "Third test description",
+  title: "iPhone 6s",
+  description: "Brand new",
+  latitude: 37.781114,
+  longitude: -123.411635,
+  price: 550,
+  user_id: user1.id,
+  category_id: cat2.id
+)
+
+Post.create(
+  title: "Hammer",
+  description: "Reliable and sturdy",
   latitude: 36.781114,
   longitude: -122.411635,
   price: 10,
-  user_id: 1,
-  category_id: 1
+  user_id: user1.id,
+  category_id: cat3.id
 )
 
-User.create(username: "Guest", password: "password")
+Post.create(
+  title: "Power drill",
+  description: "Never before used!",
+  latitude: 36.781114,
+  longitude: -122.411635,
+  price: 50,
+  user_id: user1.id,
+  category_id: cat3.id
+)
 
-Category.create(title: "Cars & Trucks")
-Category.create(title: "Electronics")
-Category.create(title: "Tools")
-Category.create(title: "Free")
-Category.create(title: "Motorcycles")
-Category.create(title: "Furniture")
-Category.create(title: "Sporting Goods")
-Category.create(title: "Video Games")
-Category.create(title: "Clothing")
-Category.create(title: "Event Tickets")
+Post.create(
+  title: "Shop Vac",
+  description: "Needs repair",
+  latitude: 36.781114,
+  longitude: -122.411635,
+  price: 5,
+  user_id: user1.id,
+  category_id: cat3.id
+)

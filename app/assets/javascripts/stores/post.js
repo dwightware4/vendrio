@@ -12,15 +12,31 @@
     },
 
     postsByCategory: function(category_id) {
-      if(category_id === -1){
-        return this.all();
-      }
       var posts = [];
 
       _posts.forEach(function(post){
-        if(post.category_id === category_id){
+        if(category_id === -1 || post.category_id === category_id){
           posts.push(post);
         }
+      });
+
+      return posts;
+    },
+
+    postsByCategoryAndKeywords: function(category_id, keywords) {
+      var posts = [];
+      if(keywords[0] === ""){
+        return posts;
+      }
+
+      _posts.forEach(function(post){
+        if(category_id === -1 || post.category_id === category_id){
+          posts.push(post);
+        }
+      });
+      var regex = new RegExp(keywords.join("|").toLowerCase());
+      posts = $.grep(posts, function(post) {
+        return(post.title.toLowerCase().match(regex) || post.description.toLowerCase().match(regex));
       });
 
       return posts;

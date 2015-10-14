@@ -19,7 +19,6 @@ window.CategoryIndex = React.createClass({
 
   componentDidMount: function() {
     CategoryStore.addChangeListener(this._updateState);
-    ApiUtil.fetchCategories();
   },
 
   componentWillUnmount: function() {

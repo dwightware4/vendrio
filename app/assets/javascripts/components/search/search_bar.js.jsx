@@ -1,4 +1,5 @@
 window.SearchBar = React.createClass({
+  mixins: [ReactRouter.History],
   render: function() {
     return(
       <div>
@@ -14,7 +15,7 @@ window.SearchBar = React.createClass({
                 <option value="-1">All</option>
                 {
                   this.state.categories.map(function(category){
-                    return <option value={category.id}>{category.title}</option>
+                    return <option key={category.id} value={category.id}>{category.title}</option>
                   })
                 }
               </select>
@@ -29,8 +30,10 @@ window.SearchBar = React.createClass({
 
   performSearch: function(e) {
     e.preventDefault();
-    var keywords = e.currentTarget.keywords.value;
-    var category = e.currentTarget.category.value;
+    var keywords = e.currentTarget.keywords.value.split(' ');
+    var category_id = e.currentTarget.category.value;
+    this.history.pushState(null, '/search/', {keywords: keywords, category_id: category_id});
+
   },
 
   getInitialState: function() {
