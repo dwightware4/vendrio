@@ -11,11 +11,14 @@
       return _posts.slice(0);
     },
 
-    postsByCategory: function(category) {
+    postsByCategory: function(category_id) {
+      if(category_id === -1){
+        return this.all();
+      }
       var posts = [];
 
       _posts.forEach(function(post){
-        if(post.category_id === category){
+        if(post.category_id === category_id){
           posts.push(post);
         }
       });
