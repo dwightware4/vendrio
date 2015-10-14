@@ -59,4 +59,17 @@ ApiUtil = {
       }
     });
   },
+
+  signOut: function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: 'session',
+      dataType: 'json',
+      type: "DELETE",
+
+      success: function(categories) {
+        window.location.href = "";
+      }
+    });
+  },
 };

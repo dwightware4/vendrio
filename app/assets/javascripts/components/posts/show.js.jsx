@@ -10,7 +10,7 @@ window.PostShow = React.createClass({
         <p>Lat: {this.state.post.latitude}</p><br/>
         <p>Long: {this.state.post.longitude}</p><br/>
         <p>Cat_ID: {this.state.post.category_id}</p><br/>
-        <a href="#">Home</a>
+
         <button onClick={this.deletePost} value={this.state.post.id}>Delete Post</button>
         <button onClick={this.editPost} value={this.state.post.id}>Edit Post</button>
       </div>

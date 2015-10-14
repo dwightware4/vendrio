@@ -17,5 +17,6 @@
 //= require flux
 //= require eventemitter
 //= require router.js
+//= require bootstrap
 //= require_tree ./components
 //= require_tree .

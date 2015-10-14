@@ -8,7 +8,6 @@ window.CategoryIndex = React.createClass({
             return <CategoryIndexItem key={category.id} category={category} />;
           })}
         </ul>
-        <a href="#/new">New Post</a>
       </div>
     );
   },

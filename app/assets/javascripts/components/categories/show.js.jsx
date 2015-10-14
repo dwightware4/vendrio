@@ -10,7 +10,6 @@ window.CategoryShow = React.createClass({
             return <PostIndexItem key={post.id} post={post} />;
           })}
         </ul>
-        <a href="#">Home</a>
       </div>
     );
   },

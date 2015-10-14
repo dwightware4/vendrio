@@ -8,7 +8,6 @@ window.PostIndex = React.createClass({
             return <PostIndexItem key={post.id} post={post} />;
           })}
         </ul>
-        <a href="#/new">New Post</a>
       </div>
     );
   },

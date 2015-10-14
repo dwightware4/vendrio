@@ -5,7 +5,6 @@ window.SearchIndex = React.createClass({
         return(
           <div>
             <h1>Nothing Matches Your Search</h1>
-            <a href="#">Home</a>
           </div>
         )
       }else{
@@ -17,7 +16,6 @@ window.SearchIndex = React.createClass({
                 return <PostIndexItem key={post.id} post={post} />;
               })}
             </ul>
-            <a href="#">Home</a>
           </div>
         );
       }

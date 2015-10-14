@@ -8,6 +8,7 @@ $(function() {
     render: function(){
       return (
           <div>
+            <NavBar />
             {this.props.children}
           </div>
       );

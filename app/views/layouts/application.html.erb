@@ -14,11 +14,10 @@
   </ul>
 <% end %>
 <body class="main">
-  <% if signed_in? %>
-    <%= button_to "Sign Out", session_url, method: "delete" %>
-  <% end %>
 
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

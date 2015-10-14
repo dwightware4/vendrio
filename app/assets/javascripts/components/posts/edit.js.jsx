@@ -47,7 +47,6 @@ window.EditPost = React.createClass({
           <input type="submit" />
 
         </form>
-        <a href="#">Home</a>
       </div>
     )
   },
