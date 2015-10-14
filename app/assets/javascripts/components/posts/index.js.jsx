@@ -2,6 +2,7 @@ window.PostIndex = React.createClass({
   render: function() {
     return(
       <div>
+        <h2>This is the PostIndex component</h2>
         <ul>
           {this.state.posts.map(function(post){
             return <PostIndexItem key={post.id} post={post} />;

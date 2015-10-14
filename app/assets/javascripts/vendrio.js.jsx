@@ -19,6 +19,7 @@ $(function() {
         <IndexRoute component={Dashboard}/>
         <Route path="new" component={PostForm}/>
         <Route path="post/:postId" component={PostShow} />
+        <Route path="edit/:postId" component={EditPost} />
       </Route>
   );
   React.render(<Router>{routes}</Router>, root);

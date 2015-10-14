@@ -17,6 +17,14 @@ class Api::PostsController < ApplicationController
     render json: Post.all
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    if post
+      post.destroy
+      render json: Post.all
+    end
+  end
+
   private
 
   def post_params
