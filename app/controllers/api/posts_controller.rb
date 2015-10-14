@@ -25,6 +25,14 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def update
+    post = Post.find(params[:id])
+    if post
+      post.update(post_params)
+      render json: Post.all
+    end
+  end
+
   private
 
   def post_params

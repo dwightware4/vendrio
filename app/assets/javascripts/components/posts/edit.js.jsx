@@ -59,7 +59,7 @@ window.EditPost = React.createClass({
       category_id: e.currentTarget.category.value,
     }
 
-    ApiUtil.editPost(options);
+    ApiUtil.editPost(this.state.post.id, options);
     this.history.pushState(null, '/', {});
   },
 });

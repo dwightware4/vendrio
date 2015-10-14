@@ -36,10 +36,10 @@ ApiUtil = {
     });
   },
 
-  editPost: function(options) {
+  editPost: function(id, options) {
     $.ajax({
-      url: 'api/posts',
-      type: 'POST',
+      url: 'api/posts/' + id,
+      type: 'PUT',
       dataType: 'json',
       data: options,
 
