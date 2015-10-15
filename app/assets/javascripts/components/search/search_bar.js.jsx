@@ -2,30 +2,30 @@ window.SearchBar = React.createClass({
   mixins: [ReactRouter.History],
   render: function() {
     return(
-      <div className="row">
-        <div className="col-xs-4 col-xs-offset-4">
-          <form onSubmit={this.performSearch}>
-            <div className="form-group">
-              <label>Keywords:
-                <input className="form-inline" type="text" name="keywords"></input>
-              </label>
+      <div className="container">
+          <div className="row">
+              <div className="col-xs-8 col-xs-offset-2">
+                  <div className="input-group">
 
-              <label>Category:
-                  <select className="form-inline select-picker" name="category">
-                    <option value="-1">Select Category</option>
-                    <option value="-1">All</option>
-                    {
-                      this.state.categories.map(function(category){
-                        return <option key={category.id} value={category.id}>{category.title}</option>
-                      })
-                    }
-                  </select>
-                </label>
+                      <div className="input-group-btn search-panel">
+                          <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <span id="search_concept">Search in</span> <span className="caret"></span>
+                          </button>
 
-              <input className="form-control btn btn-primary" type="submit" value="Search" />
-            </div>
-          </form>
-        </div>
+                          <ul className="dropdown-menu" role="menu">
+                            <li key='-1' value='-1'><a href="#contains">All</a></li>
+                            <li className="divider"></li>
+                          </ul>
+                      </div>
+
+                      <input type="hidden" name="search_param" value="all" id="search_param" />
+                      <input type="text" className="form-control" name="x" placeholder="Search terms..." />
+                      <span className="input-group-btn">
+                          <button onClick={this.performSearch} className="btn btn-default" type="button"><span className="glyphicon glyphicon-search"></span></button>
+                      </span>
+                  </div>
+              </div>
+          </div>
       </div>
     );
   },

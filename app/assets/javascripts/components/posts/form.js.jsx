@@ -9,6 +9,7 @@ window.PostForm = React.createClass({
     return(
       <div className="row">
         <div className="col-xs-4 col-xs-offset-4">
+          <h1>New Post</h1>
           <form onSubmit={this.createPost}>
             <div className="form-group">
               <label>Title:<br/>
