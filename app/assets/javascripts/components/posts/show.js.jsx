@@ -2,15 +2,17 @@ window.PostShow = React.createClass({
   mixins: [ReactRouter.History],
   render: function(){
     return(
-      <div>
-        <h1>Title: {this.state.post.title}</h1><br/>
-        <p>Description: {this.state.post.description}</p><br/>
-        <p>Price: ${this.state.post.price}</p><br/>
-        <p>Lat: {this.state.post.latitude}</p><br/>
-        <p>Long: {this.state.post.longitude}</p><br/>
+      <div className="jumbotron">
+        <div>
+          <h1 className="page-header">{this.state.post.title}</h1><br/>
+          <p>Description: {this.state.post.description}</p><br/>
+          <p>Price: ${this.state.post.price}</p><br/>
+          <p>Lat: {this.state.post.latitude}</p><br/>
+          <p>Long: {this.state.post.longitude}</p><br/>
 
-        <button onClick={this.deletePost} value={this.state.post.id}>Delete Post</button>
-        <button onClick={this.editPost} value={this.state.post.id}>Edit Post</button>
+          <button className="btn btn-default navbar-btn" onClick={this.deletePost} value={this.state.post.id}>Delete Post</button>
+          <button className="btn btn-default navbar-btn" onClick={this.editPost} value={this.state.post.id}>Edit Post</button>
+        </div>
       </div>
     );
   },

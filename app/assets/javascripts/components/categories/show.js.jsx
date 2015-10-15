@@ -2,13 +2,15 @@ window.CategoryShow = React.createClass({
   mixins: [ReactRouter.History],
   render: function(){
     return(
+      <div className="jumbotron">
       <div>
-        <div className="page-header"><h1>{this.state.category.title}</h1></div><br/>
+        <h2 className="page-header">{this.state.category.title}</h2><br/>
         <ul>
           {this.state.posts.map(function(post){
             return <PostIndexItem key={post.id} post={post} />;
           })}
         </ul>
+      </div>
       </div>
     );
   },

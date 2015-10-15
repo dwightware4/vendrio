@@ -3,7 +3,7 @@ window.SideBar = React.createClass({
   render: function() {
     return(
       <div className="navbar navbar-default sidebar col-xs-2" role="navigation">
-        <h3>Categories:</h3>
+        <h2>Categories:</h2>
         <ul className="list-group">
           {this.state.categories.map(function(category){
             return <CategoryIndexItem key={category.id} category={category} />;

@@ -2,10 +2,22 @@
 @import "bootstrap";
 @import "theme";
 
+.crazy-class-name {
+  text-align: center;
+}
+
+label {
+  text-align: center;
+}
 
 .list-group-item:hover {
-  background-color: gray;
+  background-color: #300000;
+  color: white;
+}
 
+.list-group-item {
+  color: white;
+  background-color: gray;
 }
 
 .page-header {

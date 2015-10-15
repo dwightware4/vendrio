@@ -5,19 +5,21 @@ window.SearchIndex = React.createClass({
         return(
           <div className="jumbotron">
             <div>
-              <h1>Nothing Matches Your Search</h1>
+              <h2 className="page-header">Nothing Matches Your Search</h2>
             </div>
-        </div>
+          </div>
         )
       }else{
         return(
-          <div>
-            <div className="page-header"><h1>Search Results</h1></div>
-            <ul>
-              {this.state.posts.map(function(post){
-                return <PostIndexItem key={post.id} post={post} />;
-              })}
-            </ul>
+          <div className="jumbotron">
+            <div>
+              <div><h2 className="page-header">Search Results</h2></div>
+              <ul>
+                {this.state.posts.map(function(post){
+                  return <PostIndexItem key={post.id} post={post} />;
+                })}
+              </ul>
+            </div>
           </div>
         );
       }
