@@ -3,9 +3,11 @@ window.SearchIndex = React.createClass({
   render: function(){
       if(this.state.posts.length === 0){
         return(
-          <div>
-            <h1>Nothing Matches Your Search</h1>
-          </div>
+          <div className="jumbotron">
+            <div>
+              <h1>Nothing Matches Your Search</h1>
+            </div>
+        </div>
         )
       }else{
         return(
