@@ -2,7 +2,10 @@
 <% method = user.persisted? ? "PUT" : "POST" %>
 <% button_text = user.persisted? ? "Sign In" : "Sign Up" %>
 
-<h1>Welcome to Vendrio!</h1>
+<div class="page-header">
+  <h1>Welcome to Vendrio!</h1>
+</div>
+
 <div class="row">
   <div class="col-xs-4 col-xs-offset-4">
     <form action="<%= action %>" method="post">

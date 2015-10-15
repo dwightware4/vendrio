@@ -35,7 +35,7 @@ window.PostForm = React.createClass({
               <option value="-1">Select Category</option>
               {
                 this.state.categories.map(function(category){
-                  return <option value={category.id}>{category.title}</option>
+                  return <option key={category.id} value={category.id}>{category.title}</option>
                 })
               }
             </select>

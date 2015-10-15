@@ -19,7 +19,7 @@ window.NavBar = React.createClass({
           <ul className="nav navbar-nav pull-right">
             <li><a href="#">Home</a></li>
             <li><a href="#/new">New Post</a></li>
-            <li id="sign-out-button"><a onClick={ApiUtil.signOut}>Sign Out</a></li>
+            <li><a href="" onClick={ApiUtil.signOut}>Sign Out</a></li>
           </ul>
         </div>
 
