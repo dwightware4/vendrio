@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import "theme";
 
+html {
+  overflow-y: scroll;
+}
+
 .user-auth-panel {
   margin-top: 25vh;
 }
@@ -44,6 +48,6 @@ body {
      background: url('http://7-themes.com/data_images/out/76/7030767-3d-background-wallpaper.jpg');
      background-size: cover;
      background-repeat:no-repeat;
-    display: compact;
+     display: compact;
      font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

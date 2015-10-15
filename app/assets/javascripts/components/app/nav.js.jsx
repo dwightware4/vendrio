@@ -32,7 +32,7 @@ window.NavBar = React.createClass({
               <div className="form-group">
 
                   <select className="btn btn-default dropdown-toggle" name="category">
-                    <option value="-1">Select Category</option>
+                    <option value="-1">Specify Category</option>
                     <option value="-1">All</option>
                       {
                         this.state.categories.map(function(category){
