@@ -2,7 +2,6 @@ window.CategoryIndex = React.createClass({
   render: function() {
     return(
       <div>
-        <div className="page-header"><h1>Categories</h1></div>
         <ul className="list-group">
           {this.state.categories.map(function(category){
             return <CategoryIndexItem key={category.id} category={category} />;

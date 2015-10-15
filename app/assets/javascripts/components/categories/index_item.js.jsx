@@ -7,7 +7,7 @@ window.CategoryIndexItem = React.createClass({
   render: function () {
     return(
       <li onClick={this.showCategory} className="list-group-item">
-        <p>{this.props.category.title} <span className="badge">{PostStore.postsByCategory(this.props.category.id).length}</span></p>
+        {this.props.category.title} <span className="badge">{PostStore.postsByCategory(this.props.category.id).length}</span>
       </li>
     );
   },

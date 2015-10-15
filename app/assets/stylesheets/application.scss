@@ -2,13 +2,6 @@
 @import "bootstrap";
 @import "theme";
 
-html {
-background: url(http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg) no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
 
 .list-group-item:hover {
   background-color: gray;

@@ -1,23 +1,13 @@
-<nav className="navbar navbar-default">
-<div className="container-fluid">
-  <div className="navbar-header">
-    <button type="button" className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#collapse-menu"
-            aria-expanded="false">
-      <span className="icon-bar"></span>
-      <span className="icon-bar"></span>
-      <span className="icon-bar"></span>
-    </button>
-  </div>
+<ul className="nav navbar-nav">
+  <li className="active"><a href="#/new">New Post<span className="sr-only">(current)</span></a></li>
 
-  <div className="collapse navbar-collapse" id="collapse-menu">
-    <ul className="nav navbar-nav pull-right">
-      <li><a href="#">Home</a></li>
-      <li><a href="#/new">New Post</a></li>
-      <li><a href="" onClick={ApiUtil.signOut}>Sign Out</a></li>
+  <li className="dropdown">
+    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Categories<span className="caret"></span></a>
+    <ul className="dropdown-menu">
+      <li role="separator" class="divider">Popular:</li>
+      {this.state.categories.map(function(category){
+        return <CategoryIndexItem key={category.id} category={category} />;
+      })}
     </ul>
-  </div>
-
-</div>
-</nav>
+  </li>
+</ul>

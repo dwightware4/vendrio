@@ -1,4 +1,5 @@
 window.NavBar = React.createClass({
+  mixins: [ReactRouter.History],
   render: function() {
     return(
       <nav className="navbar navbar-default">
@@ -18,32 +19,68 @@ window.NavBar = React.createClass({
               <li className="active"><a href="#/new">New Post<span className="sr-only">(current)</span></a></li>
 
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Categories<span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
+                  {this.state.categories.map(function(category){
+                    return <CategoryIndexItem key={category.id} category={category} />;
+                  })}
                 </ul>
               </li>
             </ul>
 
-            <form className="navbar-form navbar-left" role="search">
+            <form onSubmit={this.performSearch} className="navbar-form navbar-left" role="search">
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search" />
+
+                  <select className="btn btn-default dropdown-toggle" name="category">
+                    <option value="-1">Select Category</option>
+                    <option value="-1">All</option>
+                      {
+                        this.state.categories.map(function(category){
+                          return <option key={category.id} value={category.id}>{category.title}</option>
+                        })
+                      }
+                  </select>
+
+                <input type="text" name="keywords" className="form-control" placeholder="Search terms..." ></input>
+
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
 
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="" onClick={ApiUtil.signOut}>Sign Out</a></li>
+              <button type="button" onClick={ApiUtil.signOut} className="btn btn-default navbar-btn">Sign Out</button>
             </ul>
           </div>
         </div>
       </nav>
     );
+  },
+
+  performSearch: function(e) {
+    e.preventDefault();
+    var keywords = e.currentTarget.keywords.value.split(' ');
+    var category_id = e.currentTarget.category.value;
+    this.history.pushState(null, '/search/', {keywords: keywords, category_id: category_id});
+
+  },
+
+  getInitialState: function() {
+    return {
+      categories: CategoryStore.all(),
+      posts: PostStore.all(),
+    }
+  },
+
+  componentDidMount: function() {
+    CategoryStore.addChangeListener(this._updateState);
+    ApiUtil.fetchCategories();
+  },
+
+  componentWillUnmount: function() {
+    CategoryStore.removeChangeListener(this._updateState);
+  },
+
+  _updateState: function(){
+    this.setState({categories: CategoryStore.all()});
   },
 });
