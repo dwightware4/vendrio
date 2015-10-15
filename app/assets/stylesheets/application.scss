@@ -11,8 +11,28 @@
 
 .page-header {
   text-align: center;
+  color: white;
 }
 
-.sell-something-button {
+.centered-button {
   text-align: center;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(http://www.pptbackgrounds.net/uploads/elegant-grey-illumination-background-presentations-powerpoint-backgrounds.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+body {
+     margin: 0;
+     background: url('http://7-themes.com/data_images/out/76/7030767-3d-background-wallpaper.jpg');
+     background-size: cover;
+     background-repeat:no-repeat;
+    display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
