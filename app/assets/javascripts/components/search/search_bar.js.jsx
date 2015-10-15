@@ -2,28 +2,30 @@ window.SearchBar = React.createClass({
   mixins: [ReactRouter.History],
   render: function() {
     return(
-      <div>
-        <p>Search Bar</p>
-        <form onSubmit={this.performSearch}>
-          <label>Keywords:
-            <input type="text" name="keywords"></input>
-          </label><br/>
+      <div className="row">
+        <div className="col-xs-4 col-xs-offset-4">
+          <form onSubmit={this.performSearch}>
+            <div className="form-group">
+              <label>Keywords:
+                <input className="form-control" type="text" name="keywords"></input>
+              </label>
 
-          <label>Category:
-              <select name="category">
-                <option value="-1">Select Category</option>
-                <option value="-1">All</option>
-                {
-                  this.state.categories.map(function(category){
-                    return <option key={category.id} value={category.id}>{category.title}</option>
-                  })
-                }
-              </select>
-            </label><br/>
+              <label>Category:
+                  <select className="form-control" className="selectpicker" name="category">
+                    <option value="-1">Select Category</option>
+                    <option value="-1">All</option>
+                    {
+                      this.state.categories.map(function(category){
+                        return <option key={category.id} value={category.id}>{category.title}</option>
+                      })
+                    }
+                  </select>
+                </label>
 
-          <input type="submit" value="Search" />
-
-        </form>
+              <input className="form-control btn btn-primary" type="submit" value="Search" />
+            </div>
+          </form>
+        </div>
       </div>
     );
   },

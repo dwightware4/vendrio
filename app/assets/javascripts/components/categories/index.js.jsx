@@ -2,7 +2,7 @@ window.CategoryIndex = React.createClass({
   render: function() {
     return(
       <div>
-        <h2>CategoryIndex Component</h2>
+        <h2>Categories</h2>
         <ul>
           {this.state.categories.map(function(category){
             return <CategoryIndexItem key={category.id} category={category} />;

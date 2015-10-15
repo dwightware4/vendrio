@@ -7,43 +7,45 @@ window.PostForm = React.createClass({
 
   render: function(){
     return(
-      <div>
-        <form onSubmit={this.createPost}>
+      <div className="row">
+        <div className="col-xs-4 col-xs-offset-4">
+          <form onSubmit={this.createPost}>
+            <div className="form-group">
+              <label>Title:<br/>
+                <input type="text" name="title"></input>
+              </label><br/>
 
-          <label>Title:
-            <input type="text" name="title"></input>
-          </label><br/>
+              <label>Description:
+                <input className="form-control" type="text" name="description"></input>
+              </label><br/>
 
-          <label>Description:
-            <input type="text" name="description"></input>
-          </label><br/>
+              <label>Price:
+                <input className="form-control" type="text" name="price"></input>
+              </label><br/>
 
-          <label>Price:
-            <input type="text" name="price"></input>
-          </label><br/>
+              <label>Lat:
+                <input className="form-control" type="text" name="latitude"></input>
+              </label><br/>
 
-          <label>Lat:
-            <input type="text" name="latitude"></input>
-          </label><br/>
+              <label>Long:
+                <input className="form-control" type="text" name="longitude"></input>
+              </label><br/>
 
-          <label>Long:
-            <input type="text" name="longitude"></input>
-          </label><br/>
+              <label>Category:
+                <select className="form-control" name="category">
+                  <option value="-1">Select Category</option>
+                  {
+                    this.state.categories.map(function(category){
+                      return <option key={category.id} value={category.id}>{category.title}</option>
+                    })
+                  }
+                </select>
+              </label><br/>
 
-        <label>Category:
-            <select name="category">
-              <option value="-1">Select Category</option>
-              {
-                this.state.categories.map(function(category){
-                  return <option key={category.id} value={category.id}>{category.title}</option>
-                })
-              }
-            </select>
-          </label><br/>
-
-          <input type="submit" />
-
-        </form>
+            <input className="form-control btn btn-primary" type="submit" />
+            </div>
+          </form>
+        </div>
       </div>
     )
   },
