@@ -36,7 +36,7 @@ Post.create(
   longitude: -122.411635,
   price: 20000,
   user_id: user1.id,
-  category_id: cat1.id
+  category_id: cat9.id
 )
 
 Post.create(
@@ -46,7 +46,7 @@ Post.create(
   longitude: -123.411635,
   price: 700,
   user_id: user1.id,
-  category_id: cat2.id
+  category_id: cat14.id
 )
 
 Post.create(
@@ -56,7 +56,7 @@ Post.create(
   longitude: -123.411635,
   price: 550,
   user_id: user1.id,
-  category_id: cat2.id
+  category_id: cat14.id
 )
 
 Post.create(
@@ -66,7 +66,7 @@ Post.create(
   longitude: -122.411635,
   price: 10,
   user_id: user1.id,
-  category_id: cat3.id
+  category_id: cat25.id
 )
 
 Post.create(
@@ -76,7 +76,7 @@ Post.create(
   longitude: -122.411635,
   price: 50,
   user_id: user1.id,
-  category_id: cat3.id
+  category_id: cat25.id
 )
 
 Post.create(
@@ -86,5 +86,5 @@ Post.create(
   longitude: -122.411635,
   price: 5,
   user_id: user1.id,
-  category_id: cat3.id
+  category_id: cat25.id
 )
