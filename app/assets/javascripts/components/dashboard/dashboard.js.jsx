@@ -2,7 +2,14 @@ window.Dashboard = React.createClass({
   render: function() {
     return(
       <div>
-        Holder
+        <div className="navbar navbar-default sidebar col-xs-2" role="navigation">
+          <h3>Categories:</h3>
+          <ul className="list-group">
+            {this.state.categories.map(function(category){
+              return <CategoryIndexItem key={category.id} category={category} />;
+            })}
+          </ul>
+        </div>
       </div>
     );
   },
