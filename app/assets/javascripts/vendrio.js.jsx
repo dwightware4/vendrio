@@ -9,6 +9,7 @@ $(function() {
       return (
           <div>
             <NavBar />
+            <SearchBar />
             {this.props.children}
           </div>
       );
