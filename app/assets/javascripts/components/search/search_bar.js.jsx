@@ -7,11 +7,11 @@ window.SearchBar = React.createClass({
           <form onSubmit={this.performSearch}>
             <div className="form-group">
               <label>Keywords:
-                <input className="form-control" type="text" name="keywords"></input>
+                <input className="form-inline" type="text" name="keywords"></input>
               </label>
 
               <label>Category:
-                  <select className="form-control" className="selectpicker" name="category">
+                  <select className="form-inline select-picker" name="category">
                     <option value="-1">Select Category</option>
                     <option value="-1">All</option>
                     {
