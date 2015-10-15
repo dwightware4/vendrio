@@ -10,7 +10,7 @@ window.SearchIndex = React.createClass({
       }else{
         return(
           <div>
-            <h2>Search Results:</h2>
+            <div className="page-header"><h1>Search Results</h1></div>
             <ul>
               {this.state.posts.map(function(post){
                 return <PostIndexItem key={post.id} post={post} />;

@@ -3,8 +3,7 @@ window.CategoryShow = React.createClass({
   render: function(){
     return(
       <div>
-        <h2>CategoryShow Component</h2>
-        <h1>{this.state.category.title}</h1><br/>
+        <div className="page-header"><h1>{this.state.category.title}</h1></div><br/>
         <ul>
           {this.state.posts.map(function(post){
             return <PostIndexItem key={post.id} post={post} />;

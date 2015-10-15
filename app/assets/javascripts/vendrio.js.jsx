@@ -13,7 +13,11 @@ $(function() {
             {this.props.children}
           </div>
       );
-    }
+    },
+
+    componentDidMount: function() {
+      ApiUtil.fetchPosts();
+    },
   });
 
   var routes = (

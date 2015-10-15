@@ -6,7 +6,7 @@ window.PostIndexItem = React.createClass({
 
   render: function () {
     return(
-      <li onClick={this.showPost}>
+      <li onClick={this.showPost} className="list-group-item">
         <p>{this.props.post.title}</p>
       </li>
     );

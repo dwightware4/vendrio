@@ -3,8 +3,7 @@ window.PostShow = React.createClass({
   render: function(){
     return(
       <div>
-        <h2>PostShow Component</h2>
-        <p>Title: {this.state.post.title}</p><br/>
+        <h1>Title: {this.state.post.title}</h1><br/>
         <p>Description: {this.state.post.description}</p><br/>
         <p>Price: ${this.state.post.price}</p><br/>
         <p>Lat: {this.state.post.latitude}</p><br/>

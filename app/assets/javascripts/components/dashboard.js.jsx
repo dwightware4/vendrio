@@ -6,4 +6,8 @@ window.Dashboard = React.createClass({
       </div>
     );
   },
+
+  componentDidMount: function() {
+    ApiUtil.fetchPosts();
+  },
 });
