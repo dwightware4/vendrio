@@ -11,7 +11,7 @@ window.RecentPosts = React.createClass({
           return(
             <div key={post.id} className="col-xs-3">
               <div className="thumbnail">
-                <img src={post.images[0] || "http://i.imgur.com/26X1p0q.png?1"}/>
+                <img src={post.images ? post.images[0] : "http://i.imgur.com/26X1p0q.png?1"}/>
                 <div className="caption">
                   <h3>{post.title}</h3>
                   <p>{post.description}</p>
