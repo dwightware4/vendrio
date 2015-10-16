@@ -23,13 +23,12 @@ window.RecentPosts = React.createClass({
   },
 
   getInitialState: function() {
-    return({
-      recentPosts: PostStore.recent(),
-    });
+    return({recentPosts: PostStore.recent()});
   },
 
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
+    ApiUtil.fetchPosts();
   },
 
   componentWillUnmount: function() {
