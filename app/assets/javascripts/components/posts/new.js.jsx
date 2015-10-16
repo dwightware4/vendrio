@@ -14,8 +14,6 @@ window.PostForm = React.createClass({
                 <input className="form-control" type="text" name="title" placeholder="Title"></input>
                 <input className="form-control" type="text" name="description" placeholder="Description"></input>
                 <input className="form-control" type="text" name="price" placeholder="Price"></input>
-                <input className="form-control" type="text" name="latitude" placeholder="Latitude"></input>
-                <input className="form-control" type="text" name="longitude" placeholder="Longitude"></input>
                 <select className="form-control" name="category">
                   <option value="-1">Select Category</option>
                   {
@@ -26,14 +24,10 @@ window.PostForm = React.createClass({
                 </select>
 
                 <input className="form-control" id="geocomplete" type="text" name="address" placeholder="Address"></input>
-                  <script>
-                    $(function(){
-                      $("#geocomplete").geocomplete()
-                    });
-                  </script>
-                  <div id="addressDetails" class="hide">
-                    <input name="lat" type="hidden" class="form-control" />
-                    <input name="lng" type="hidden" class="form-control" />
+
+                  <div id="addressDetails" className="hide">
+                    <input name="lat" type="hidden" value="" />
+                    <input name="lng" type="hidden" value="" />
                   </div>
 
                 <input className="form-control btn btn-primary" type="submit" />
@@ -59,10 +53,11 @@ window.PostForm = React.createClass({
       title: e.currentTarget.title.value,
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
-      latitude: e.currentTarget.latitude.value,
-      longitude: e.currentTarget.longitude.value,
+      latitude: e.currentTarget.lat.value,
+      longitude: e.currentTarget.lng.value,
       category_id: e.currentTarget.category.value,
     }
+
     ApiUtil.createPost(options);
     this.history.pushState(null, '/', {});
   },
@@ -73,6 +68,7 @@ window.PostForm = React.createClass({
 
   componentDidMount: function() {
     CategoryStore.addChangeListener(this._updateState);
+    $("#geocomplete").geocomplete({details: "#addressDetails"});
   },
 
   componentWillUnmount: function() {

@@ -18,7 +18,6 @@ ApiUtil = {
       data: options,
 
       success: function(posts) {
-        debugger
         ApiActions.receivePosts(posts);
       }
     });
