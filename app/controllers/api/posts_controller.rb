@@ -36,6 +36,6 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:title, :description, :latitude, :longitude, :price, :category_id, :city, :state)
+    params.permit(:title, :description, :latitude, :longitude, :price, :category_id, :city, :state, :images)
   end
 end

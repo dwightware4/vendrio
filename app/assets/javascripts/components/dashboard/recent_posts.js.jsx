@@ -7,7 +7,7 @@ window.RecentPosts = React.createClass({
           return(
             <div key={post.id} className="col-xs-3">
               <div className="thumbnail">
-                <img src="http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"/>
+                <img src="www.google.com"/>
                 <div className="caption">
                   <h3>{post.title}</h3>
                   <p>{post.description}</p>

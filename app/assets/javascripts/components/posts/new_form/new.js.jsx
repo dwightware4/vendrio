@@ -18,7 +18,7 @@ window.PostForm = React.createClass({
                   <option value="-1">Select Category</option>
                   {
                     this.state.categories.map(function(category){
-                      return <option key={category.id} value={category.id}>{category.title}</option>
+                      return <option key={category.id} value={category.id}>{category.title}</option>;
                     })
                   }
                 </select>
@@ -35,7 +35,7 @@ window.PostForm = React.createClass({
         </div>
         </div>
       </div>
-    )
+    );
   },
 
   getInitialState: function() {
@@ -48,18 +48,16 @@ window.PostForm = React.createClass({
       title: e.currentTarget.title.value,
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
+      images: JSON.stringify(imageUrls),
       latitude: e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value,
       city: e.currentTarget.locality.value,
       state: e.currentTarget.administrative_area_level_1_short.value,
       category_id: e.currentTarget.category.value,
-    }
+    };
     ApiUtil.createPost(options);
+    imageUrls = [];
     this.history.pushState(null, '/', {});
-  },
-
-  getInitialState: function() {
-    return {categories: CategoryStore.all()};
   },
 
   componentDidMount: function() {
