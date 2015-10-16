@@ -43,6 +43,7 @@ Post.create(
 Post.create(
   title: "Laptop",
   description: "Macbook Air",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 37.781114,
   longitude: -123.411635,
   city: "San Francisco",
@@ -54,6 +55,7 @@ Post.create(
 Post.create(
   title: "iPhone 6s",
   description: "Brand new",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 37.781114,
   longitude: -123.411635,
   city: "San Francisco",
@@ -66,6 +68,7 @@ Post.create(
 Post.create(
   title: "Hammer",
   description: "Reliable and sturdy",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -78,6 +81,7 @@ Post.create(
 Post.create(
   title: "Power drill",
   description: "Never before used!",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -90,6 +94,7 @@ Post.create(
 Post.create(
   title: "Shop Vac",
   description: "Needs repair",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -102,6 +107,7 @@ Post.create(
 Post.create(
   title: "Riding Lawn Mower",
   description: "Old but works",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -114,6 +120,7 @@ Post.create(
 Post.create(
   title: "Fedora",
   description: "For hipsters",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "Seattle",
@@ -126,6 +133,7 @@ Post.create(
 Post.create(
   title: "Bieber Tickets",
   description: "Free",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "Denver",
@@ -138,6 +146,7 @@ Post.create(
 Post.create(
   title: "Tim Tebow Jersey",
   description: "Limited edition!",
+  images: '["http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "Miami",
