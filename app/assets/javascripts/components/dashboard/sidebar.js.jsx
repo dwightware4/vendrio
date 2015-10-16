@@ -13,10 +13,6 @@ window.SideBar = React.createClass({
     );
   },
 
-  componentDidMount: function() {
-    ApiUtil.fetchPosts();
-  },
-
   getInitialState: function() {
     return {categories: CategoryStore.all()};
   },

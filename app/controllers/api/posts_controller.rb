@@ -14,14 +14,14 @@ class Api::PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     post.save!
-    render json: Post.all
+    render json: Post.all.order(created_at: :desc)
   end
 
   def destroy
     post = Post.find(params[:id])
     if post
       post.destroy
-      render json: Post.all
+      render json: Post.all.order(created_at: :desc)
     end
   end
 
@@ -29,7 +29,7 @@ class Api::PostsController < ApplicationController
     post = Post.find(params[:id])
     if post
       post.update(post_params)
-      render json: Post.all
+      render json: Post.all.order(created_at: :desc)
     end
   end
 

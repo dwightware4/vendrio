@@ -16,6 +16,7 @@ $(function() {
 
     componentDidMount: function() {
       ApiUtil.fetchPosts();
+      ApiUtil.fetchCategories();
     },
   });
 

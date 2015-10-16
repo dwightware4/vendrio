@@ -7,7 +7,7 @@ window.RecentPosts = React.createClass({
           return(
             <div key={post.id} className="col-xs-3">
               <div className="thumbnail">
-                <img src="http://cdn.wccftech.com/wp-content/uploads/2014/08/iphone6-3-580-90-e1407595192646.jpg"/>
+                <img src="http://lazerspizzasurfside.com/wp-content/uploads/2013/08/Photo-Image-Coming-Soon-Icon.jpg"/>
                 <div className="caption">
                   <h3>{post.title}</h3>
                   <p>{post.description}</p>
@@ -28,7 +28,6 @@ window.RecentPosts = React.createClass({
 
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
-    ApiUtil.fetchPosts();
   },
 
   componentWillUnmount: function() {

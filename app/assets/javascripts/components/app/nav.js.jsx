@@ -44,7 +44,7 @@ window.NavBar = React.createClass({
                 <input type="text" name="keywords" className="form-control" placeholder="Search terms..." ></input>
 
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button type="submit" className="btn btn-default">Search</button>
             </form>
 
             <ul className="nav navbar-nav navbar-right">
@@ -73,7 +73,6 @@ window.NavBar = React.createClass({
 
   componentDidMount: function() {
     CategoryStore.addChangeListener(this._updateState);
-    ApiUtil.fetchCategories();
   },
 
   componentWillUnmount: function() {

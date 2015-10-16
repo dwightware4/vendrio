@@ -1,10 +1,5 @@
 window.PostForm = React.createClass({
   mixins: [ReactRouter.History],
-
-  getInitialState: function() {
-    return {categories: CategoryStore.all()};
-  },
-
   render: function(){
     return(
       <div className="jumbotron">
@@ -36,6 +31,10 @@ window.PostForm = React.createClass({
     )
   },
 
+  getInitialState: function() {
+    return {categories: CategoryStore.all()};
+  },
+
   createPost: function(e){
     e.preventDefault();
     var options = {
@@ -49,10 +48,6 @@ window.PostForm = React.createClass({
 
     ApiUtil.createPost(options);
     this.history.pushState(null, '/', {});
-  },
-
-  componentDidMount: function() {
-    ApiUtil.fetchPosts();
   },
 
   getInitialState: function() {
