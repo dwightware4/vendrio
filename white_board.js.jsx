@@ -1,69 +1,85 @@
-<div className="row">
+window.PostForm = React.createClass({
+  mixins: [ReactRouter.History],
+  render: function(){
+    return(
+      <div className="jumbotron">
+        <div className="container">
+        <div className="row-fluid">
 
-  <div className="col-xs-3">
-    <div className="thumbnail">
-      <img src="http://cdn.wccftech.com/wp-content/uploads/2014/08/iphone6-3-580-90-e1407595192646.jpg"/>
-      <div className="caption">
-        <h3>New iPhone 6</h3>
-        <p>New in box</p>
-        <p><a href="#/post/3" className="btn btn-primary" role="button">View</a></p>
+{/* post details colum */}
+          <div className="col-xs-6 col-xs-offset-3">
+            <h2 className="page-header">New Post</h2>
+            <form onSubmit={this.createPost}>
+              <div className="form-group">
+                <input className="form-control" type="text" name="title" placeholder="Title"></input>
+                <input className="form-control" type="text" name="description" placeholder="Description"></input>
+                <input className="form-control" type="text" name="price" placeholder="Price"></input>
+                <select className="form-control" name="category">
+                  <option value="-1">Select Category</option>
+                  {
+                    this.state.categories.map(function(category){
+                      return <option key={category.id} value={category.id}>{category.title}</option>
+                    })
+                  }
+                </select>
+
+                <input className="form-control" id="geocomplete" type="text" name="address" placeholder="Address"></input>
+
+                  <div id="addressDetails" className="hide">
+                    <input name="lat" type="hidden" value="" />
+                    <input name="lng" type="hidden" value="" />
+                    <input name="locality" type="hidden" value="" />
+                    <input name="administrative_area_level_1_short" type="hidden" value="" />
+                  </div>
+
+                <label>Upload Images:<input type="file" onChange={this.handleFile} /></label>
+
+                <input className="form-control btn btn-primary" type="submit" />
+              </div>
+            </form>
+          </div>
+{/* end post details */}
+
+        </div>
+        </div>
       </div>
-    </div>
-  </div>
+    )
+  },
 
-  <div className="col-xs-3">
-    <div className="thumbnail">
-      <img src="https://www.tacomaworld.com/attachments/img_1181-jpg.181057/"/>
-      <div className="caption">
-        <h3>2012 Toyota Tacoma</h3>
-        <p>Fully loaded! Must see!</p>
-        <p><a href="#/post/1" className="btn btn-primary" role="button">View</a></p>
-      </div>
-    </div>
-  </div>
+  getInitialState: function() {
+    return {categories: CategoryStore.all()};
+  },
 
-  <div className="col-xs-3">
-    <div className="thumbnail">
-      <img src="http://1.bp.blogspot.com/--rl_Wc-OGt4/TbbdAlSu7KI/AAAAAAAAHpA/l4myqHL3Znc/s1600/new%2Bsofa%2B003.JPG"/>
-      <div className="caption">
-        <h3>Sofa</h3>
-        <p>Lightly used, very comfy</p>
-        <p><a href="#/post/7" className="btn btn-primary" role="button">View</a></p>
-      </div>
-    </div>
-  </div>
+  createPost: function(e){
+    e.preventDefault();
+    var options = {
+      title: e.currentTarget.title.value,
+      description: e.currentTarget.description.value,
+      price: e.currentTarget.price.value,
+      latitude: e.currentTarget.lat.value,
+      longitude: e.currentTarget.lng.value,
+      city: e.currentTarget.locality.value,
+      state: e.currentTarget.administrative_area_level_1_short.value,
+      category_id: e.currentTarget.category.value,
+    }
+    ApiUtil.createPost(options);
+    this.history.pushState(null, '/', {});
+  },
 
-  <div className="col-xs-3">
-    <div className="thumbnail">
-      <img src="http://modernfarmer.com/wp-content/uploads/2013/06/cow-plague-hero.jpg"/>
-      <div className="caption">
-        <h3>Riding Lawn Mower</h3>
-        <p>Old but works!</p>
-        <p><a href="#/post/8" className="btn btn-primary" role="button">View</a></p>
-      </div>
-    </div>
-  </div>
+  getInitialState: function() {
+    return {categories: CategoryStore.all()};
+  },
 
-  <div className="col-xs-3">
-    <div className="thumbnail">
-      <img src="http://moparx.com/files/images/super_nintendo_sns-101.jpg"/>
-      <div className="caption">
-        <h3>Super NES</h3>
-        <p>Classic, comes with games</p>
-        <p><a href="#/post/9" className="btn btn-primary" role="button">View</a></p>
-      </div>
-    </div>
-  </div>
+  componentDidMount: function() {
+    CategoryStore.addChangeListener(this._updateState);
+    $("#geocomplete").geocomplete({details: "#addressDetails"});
+  },
 
-  <div className="col-xs-3">
-    <div className="thumbnail">
-      <img src="http://mytop10bestsellers.com/wp-content/uploads/2015/07/Rice-cooker-2.jpg"/>
-      <div className="caption">
-        <h3>Rice cooker</h3>
-        <p>Clean, works well</p>
-        <p><a href="#/post/10" className="btn btn-primary" role="button">View</a></p>
-      </div>
-    </div>
-  </div>
+  componentWillUnmount: function() {
+    CategoryStore.removeChangeListener(this._updateState);
+  },
 
-</div>
+  _updateState: function(){
+    this.setState({categories: CategoryStore.all()});
+  },
+});
