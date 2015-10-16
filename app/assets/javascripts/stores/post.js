@@ -1,4 +1,4 @@
-(function(root){
+(function(root) {
   var _posts = [];
   var CHANGE_EVENT = 'postStoreChange';
 
@@ -7,8 +7,12 @@
   };
 
   root.PostStore = $.extend({}, EventEmitter.prototype, {
-    all: function(){
+    all: function() {
       return _posts.slice(0);
+    },
+
+    recent: function() {
+      return _posts.slice(0, 9);
     },
 
     postsByCategory: function(category_id) {
@@ -29,8 +33,8 @@
         return posts;
       }
 
-      _posts.forEach(function(post){
-        if(category_id === -1 || post.category_id === category_id){
+      _posts.forEach(function(post) {
+        if(category_id === -1 || post.category_id === category_id) {
           posts.push(post);
         }
       });
@@ -42,10 +46,10 @@
       return posts;
     },
 
-    addChangeListener: function(callback){
+    addChangeListener: function(callback) {
       this.on(CHANGE_EVENT, callback);
     },
-    removeChangeListener: function(callback){
+    removeChangeListener: function(callback) {
       this.removeListener(CHANGE_EVENT, callback);
     },
 
@@ -58,8 +62,8 @@
       return targetPost;
     },
 
-    dispatcherID: AppDispatcher.register(function(payload){
-      if(payload.actionType === PostConstants.POSTS_RECEIVED){
+    dispatcherID: AppDispatcher.register(function(payload) {
+      if(payload.actionType === PostConstants.POSTS_RECEIVED) {
         resetPosts(payload.posts);
         PostStore.emit(CHANGE_EVENT);
       }
