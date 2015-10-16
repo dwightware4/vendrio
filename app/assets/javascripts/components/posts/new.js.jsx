@@ -3,8 +3,11 @@ window.PostForm = React.createClass({
   render: function(){
     return(
       <div className="jumbotron">
-        <div className="row">
-          <div className="col-xs-4 col-xs-offset-4">
+        <div className="container">
+        <div className="row-fluid">
+
+{/* post details colum */}
+          <div className="col-xs-6 col-xs-offset-3">
             <h2 className="page-header">New Post</h2>
             <form onSubmit={this.createPost}>
               <div className="form-group">
@@ -22,10 +25,24 @@ window.PostForm = React.createClass({
                   }
                 </select>
 
+                <input className="form-control" id="geocomplete" type="text" name="address" placeholder="Address"></input>
+                  <script>
+                    $(function(){
+                      $("#geocomplete").geocomplete()
+                    });
+                  </script>
+                  <div id="addressDetails" class="hide">
+                    <input name="lat" type="hidden" class="form-control" />
+                    <input name="lng" type="hidden" class="form-control" />
+                  </div>
+
                 <input className="form-control btn btn-primary" type="submit" />
               </div>
             </form>
           </div>
+{/* end post details */}
+
+        </div>
         </div>
       </div>
     )
@@ -37,6 +54,7 @@ window.PostForm = React.createClass({
 
   createPost: function(e){
     e.preventDefault();
+
     var options = {
       title: e.currentTarget.title.value,
       description: e.currentTarget.description.value,
@@ -45,7 +63,6 @@ window.PostForm = React.createClass({
       longitude: e.currentTarget.longitude.value,
       category_id: e.currentTarget.category.value,
     }
-
     ApiUtil.createPost(options);
     this.history.pushState(null, '/', {});
   },
