@@ -28,6 +28,7 @@ window.PostForm = React.createClass({
                   <div id="addressDetails" className="hide">
                     <input name="lat" type="hidden" value="" />
                     <input name="lng" type="hidden" value="" />
+                    <input name="locality" type="hidden" value="" />
                   </div>
 
                 <input className="form-control btn btn-primary" type="submit" />
@@ -48,13 +49,13 @@ window.PostForm = React.createClass({
 
   createPost: function(e){
     e.preventDefault();
-
     var options = {
       title: e.currentTarget.title.value,
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
       latitude: e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value,
+      city: e.currentTarget.locality.value,
       category_id: e.currentTarget.category.value,
     }
 

@@ -34,6 +34,7 @@ Post.create(
   description: "2012, fully loaded!",
   latitude: 37.781114,
   longitude: -122.411635,
+  city: "San Francisco",
   price: 20000,
   user_id: user1.id,
   category_id: cat9.id
@@ -44,6 +45,7 @@ Post.create(
   description: "Macbook Air",
   latitude: 37.781114,
   longitude: -123.411635,
+  city: "San Francisco",
   price: 700,
   user_id: user1.id,
   category_id: cat14.id
@@ -54,6 +56,7 @@ Post.create(
   description: "Brand new",
   latitude: 37.781114,
   longitude: -123.411635,
+  city: "San Francisco",
   price: 550,
   user_id: user1.id,
   category_id: cat14.id
@@ -64,6 +67,7 @@ Post.create(
   description: "Reliable and sturdy",
   latitude: 36.781114,
   longitude: -122.411635,
+  city: "San Francisco",
   price: 10,
   user_id: user1.id,
   category_id: cat25.id
@@ -74,6 +78,7 @@ Post.create(
   description: "Never before used!",
   latitude: 36.781114,
   longitude: -122.411635,
+  city: "San Francisco",
   price: 50,
   user_id: user1.id,
   category_id: cat25.id
@@ -84,6 +89,7 @@ Post.create(
   description: "Needs repair",
   latitude: 36.781114,
   longitude: -122.411635,
+  city: "San Francisco",
   price: 5,
   user_id: user1.id,
   category_id: cat25.id
