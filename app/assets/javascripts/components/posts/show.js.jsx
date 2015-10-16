@@ -7,7 +7,7 @@ window.PostShow = React.createClass({
           <h1 className="page-header">{this.state.post.title}</h1><br/>
           <p>Description: {this.state.post.description}</p><br/>
           <p>Price: ${this.state.post.price}</p><br/>
-          <p>Location: {this.state.post.city}</p><br/>
+          <p>Location: {this.state.post.city}, {this.state.post.state}</p><br/>
 
 
           <button className="btn btn-default navbar-btn" onClick={this.deletePost} value={this.state.post.id}>Delete Post</button>

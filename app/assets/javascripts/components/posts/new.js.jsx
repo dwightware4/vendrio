@@ -29,6 +29,7 @@ window.PostForm = React.createClass({
                     <input name="lat" type="hidden" value="" />
                     <input name="lng" type="hidden" value="" />
                     <input name="locality" type="hidden" value="" />
+                    <input name="administrative_area_level_1_short" type="hidden" value="" />
                   </div>
 
                 <input className="form-control btn btn-primary" type="submit" />
@@ -56,9 +57,9 @@ window.PostForm = React.createClass({
       latitude: e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value,
       city: e.currentTarget.locality.value,
+      state: e.currentTarget.administrative_area_level_1_short.value,
       category_id: e.currentTarget.category.value,
     }
-
     ApiUtil.createPost(options);
     this.history.pushState(null, '/', {});
   },

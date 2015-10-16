@@ -57,6 +57,7 @@ Post.create(
   latitude: 37.781114,
   longitude: -123.411635,
   city: "San Francisco",
+  state: "CA",
   price: 550,
   user_id: user1.id,
   category_id: cat14.id
@@ -68,6 +69,7 @@ Post.create(
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
+  state: "CA",
   price: 10,
   user_id: user1.id,
   category_id: cat25.id
@@ -79,6 +81,7 @@ Post.create(
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
+  state: "CA",
   price: 50,
   user_id: user1.id,
   category_id: cat25.id
@@ -90,7 +93,56 @@ Post.create(
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
+  state: "CA",
   price: 5,
   user_id: user1.id,
   category_id: cat25.id
+)
+
+Post.create(
+  title: "Riding Lawn Mower",
+  description: "Old but works",
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "San Francisco",
+  state: "CA",
+  price: 150,
+  user_id: user1.id,
+  category_id: cat25.id
+)
+
+Post.create(
+  title: "Fedora",
+  description: "For hipsters",
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Seattle",
+  state: "WA",
+  price: 700,
+  user_id: user1.id,
+  category_id: cat11.id
+)
+
+Post.create(
+  title: "Bieber Tickets",
+  description: "Free",
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Denver",
+  state: "CO",
+  price: 0,
+  user_id: user1.id,
+  category_id: cat24.id
+)
+
+Post.create(
+  title: "Tim Tebow Jersey",
+  description: "Limited edition!",
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Miami",
+  state: "FL",
+  price: 75,
+  user_id: user1.id,
+  category_id: cat11.id
 )
