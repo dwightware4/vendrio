@@ -32,6 +32,7 @@ user1 = User.create(username: "Guest", password: "password")
 Post.create(
   title: "Toyota Tacoma",
   description: "2012, fully loaded!",
+  images: '["http://www.bestcarsnews.com/wp-content/uploads/2012/01/2012-Toyota-Tacoma-picture.jpg"]',
   latitude: 37.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -43,6 +44,7 @@ Post.create(
 Post.create(
   title: "Laptop",
   description: "Macbook Air",
+  images: '["http://www8.pcmag.com/media/images/297548-apple-macbook-air-11-inch-mid-2012.jpg"]',
   latitude: 37.781114,
   longitude: -123.411635,
   city: "San Francisco",
@@ -54,6 +56,7 @@ Post.create(
 Post.create(
   title: "iPhone 6s",
   description: "Brand new",
+  images: '["http://blogs-images.forbes.com/gordonkelly/files/2014/10/2014-10-19-16.04.58-1940x1413.jpg"]',
   latitude: 37.781114,
   longitude: -123.411635,
   city: "San Francisco",
@@ -66,6 +69,7 @@ Post.create(
 Post.create(
   title: "Hammer",
   description: "Reliable and sturdy",
+  images: '["https://upload.wikimedia.org/wikipedia/en/e/e1/StephensCabinPorch_Hammer.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -78,6 +82,7 @@ Post.create(
 Post.create(
   title: "Power drill",
   description: "Never before used!",
+  images: '["http://ecx.images-amazon.com/images/I/71uHcxJd2oL._SL1500_.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -90,6 +95,7 @@ Post.create(
 Post.create(
   title: "Shop Vac",
   description: "Needs repair",
+  images: '["https://coolhardware.files.wordpress.com/2010/11/shop-vac-small-2301885_a_v4.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -102,6 +108,7 @@ Post.create(
 Post.create(
   title: "Riding Lawn Mower",
   description: "Old but works",
+  images: '["http://www.ridinglawnmowershq.com/wp-content/uploads/2014/03/poulan-42-inch-riding-lawn-mower.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "San Francisco",
@@ -114,6 +121,7 @@ Post.create(
 Post.create(
   title: "Fedora",
   description: "For hipsters",
+  images: '["http://www.newyorkhatco.com/sites/default/files/5325_0.png"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "Seattle",
@@ -126,6 +134,7 @@ Post.create(
 Post.create(
   title: "Bieber Tickets",
   description: "Free",
+  images: '["http://i486.photobucket.com/albums/rr225/micquek/ConcertTicket.jpg"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "Denver",
@@ -138,6 +147,7 @@ Post.create(
 Post.create(
   title: "Tim Tebow Jersey",
   description: "Limited edition!",
+  images: '["http://i.ebayimg.com/00/s/MTIwMFgxNjAw/$(KGrHqV,!ksE7!QbvBtPBO5Vu66cww~~60_35.JPG"]',
   latitude: 36.781114,
   longitude: -122.411635,
   city: "Miami",

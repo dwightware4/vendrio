@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import "theme";
 
+.font-bold {
+  font-weight: bold;
+}
+
 h4 {
   color: white;
   text-align: center;
@@ -40,7 +44,7 @@ label {
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: url(http://i.imgur.com/7gfzsK7.jpg);
+    background-image: url(http://res.cloudinary.com/vendrio/image/upload/v1445036285/7gfzsK7_ebnfhk.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -50,7 +54,7 @@ label {
 
 body {
      margin: 0;
-     background: url('http://i.imgur.com/ubPzo5Z.jpg');
+     background: url('http://res.cloudinary.com/vendrio/image/upload/v1445036283/ubPzo5Z_s0h7kt.jpg');
      background-size: cover;
      background-repeat:no-repeat;
      display: compact;

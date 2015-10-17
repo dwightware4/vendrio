@@ -1,4 +1,5 @@
 var imageUrls = [];
+var thumbnailUrls = [];
 
 window.Cloudinary = React.createClass({
   render: function () {
@@ -21,5 +22,6 @@ window.Cloudinary = React.createClass({
 
   setImageUrl: function(error, result) {
       imageUrls.push(result[0].secure_url);
+      thumbnailUrls.push(result[0].thumbnail_url);
   },
 });

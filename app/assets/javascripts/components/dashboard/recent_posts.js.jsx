@@ -2,26 +2,29 @@ window.RecentPosts = React.createClass({
   render: function() {
     return(
       <div className="row">
+        <div className="col-xs-9">
+          <h3 className="page-header">Recent Posts</h3>
+          {this.state.recentPosts.map(function(post){
+            if(typeof(post.images) === 'string'){
+              post.images = JSON.parse(post.images);
+            }
 
-        {this.state.recentPosts.map(function(post){
-          if(typeof(post.images) === 'string'){
-            post.images = JSON.parse(post.images);
-          }
+            return(
+              <div key={post.id} className="col-xs-3">
 
-          return(
-            <div key={post.id} className="col-xs-3">
-              <div className="thumbnail">
-                <img src={post.images ? post.images[0] : "http://i.imgur.com/26X1p0q.png?1"}/>
-                <div className="caption">
-                  <h3>{post.title}</h3>
-                  <p>{post.description}</p>
-                  <p><a href={"#/post/" + post.id} className="btn btn-primary" role="button">View</a></p>
-                </div>
+                <a href={"#/post/" + post.id} className="thumbnail">
+                  <img className="img-rounded" src={post.images ? post.images[0] : "http://res.cloudinary.com/vendrio/image/upload/v1445036262/no-image_pi8xii.png"}/>
+                  <div className="caption">
+                    <h6>{post.city}, {post.state}<span className="pull-right font-bold">${post.price}</span></h6>
+                    <h5>{post.title}</h5>
+                  </div>
+                </a>
+
+
               </div>
-            </div>
-          );
+            );
           }.bind(this))};
-
+        </div>
       </div>
     );
   },
