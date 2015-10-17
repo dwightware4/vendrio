@@ -156,3 +156,94 @@ Post.create(
   user_id: user1.id,
   category_id: cat11.id
 )
+
+Post.create(
+  title: "Baseball Glove",
+  description: "Worn in",
+  images: '["http://www.howtocleananything.com/wp-content/uploads/2010/07/baseballglove1.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Omaha",
+  state: "NE",
+  price: 20,
+  user_id: user1.id,
+  category_id: cat23.id
+)
+
+Post.create(
+  title: "2003 CBR 600RR",
+  description: "Awesome bike!",
+  images: '["http://imganuncios.mitula.net/2003_honda_cbr_600rr_7100miles_1_owner_1800u_d_5330055421804006395.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Walnut Creek",
+  state: "CA",
+  price: 3600,
+  user_id: user1.id,
+  category_id: cat22.id
+)
+
+Post.create(
+  title: "Book collection",
+  description: "Many titles",
+  images: '["http://cdn.mhpbooks.com/uploads/2015/06/books.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Green Bay",
+  state: "WI",
+  price: 50,
+  user_id: user1.id,
+  category_id: cat7.id
+)
+
+Post.create(
+  title: "50\" LCD TV",
+  description: "Like new",
+  images: '["http://flatscreenexpert.com/wp-content/uploads/2013/11/flat_screen_lcd.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Green Bay",
+  state: "WI",
+  price: 18,
+  user_id: user1.id,
+  category_id: cat14.id
+)
+
+Post.create(
+  title: "2006 BMW 530i",
+  description: "Beautiful car",
+  images: '["http://photos3.automanager.com/020199/a58dc260abf3d24f8ad1ccc132999946/10533ce781_640.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "Papillion",
+  state: "NE",
+  price: 10000,
+  user_id: user1.id,
+  category_id: cat9.id
+)
+
+Post.create(
+  title: "Nike Shoes",
+  description: "Brand new, limited",
+  images: '["https://s3.amazonaws.com/rapgenius/filepicker%2F5jTDmubSTnCREE8BIe5w_nike_shoes.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "New York",
+  state: "NY",
+  price: 150,
+  user_id: user1.id,
+  category_id: cat11.id
+)
+
+Post.create(
+  title: "Old painting",
+  description: "Unknown origin, really cool",
+  images: '["http://webneel.com/daily/sites/default/files/images/daily/02-2013/14-portrait-of-leopold-prince-old-painting.jpg"]',
+  latitude: 36.781114,
+  longitude: -122.411635,
+  city: "San Diego",
+  state: "CA",
+  price: 5000,
+  user_id: user1.id,
+  category_id: cat1.id
+)
