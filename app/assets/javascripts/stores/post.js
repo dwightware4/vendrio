@@ -12,7 +12,7 @@
     },
 
     recent: function() {
-      return _posts.slice(0, 9);
+      return _posts.slice(0, 16);
     },
 
     postsByCategory: function(category_id) {
