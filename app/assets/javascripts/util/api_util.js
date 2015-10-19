@@ -18,7 +18,7 @@ ApiUtil = {
       data: options,
 
       success: function(posts) {
-        ApiActions.receivePosts(posts);
+        ApiActions.receivePosts(posts.products);
       }
     });
   },
@@ -31,7 +31,7 @@ ApiUtil = {
       data: id,
 
       success: function(posts) {
-        ApiActions.receivePosts(posts);
+        ApiActions.receivePosts(posts.products);
       }
     });
   },
@@ -44,7 +44,7 @@ ApiUtil = {
       data: options,
 
       success: function(posts) {
-        ApiActions.receivePosts(posts);
+        ApiActions.receivePosts(posts.products);
       }
     });
   },

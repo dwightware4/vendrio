@@ -18,14 +18,16 @@ class Api::PostsController < ApplicationController
       Image.create!({url: image, post_id: post.id})
     end
 
-    render json: Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc)
+    render :index
   end
 
   def destroy
     post = Post.find(params[:id])
     if post
       post.destroy
-      render json: Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc)
+      render :index
     end
   end
 
@@ -33,7 +35,8 @@ class Api::PostsController < ApplicationController
     post = Post.find(params[:id])
     if post
       post.update(post_params)
-      render json: Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc)
+      render :index
     end
   end
 
