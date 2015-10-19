@@ -13,9 +13,10 @@ class Api::PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     post.save!
-
-    params[:images].each do |image|
-      Image.create!({url: image, post_id: post.id})
+    if params[:images]
+      params[:images].each do |image|
+        Image.create!({url: image, post_id: post.id})
+      end
     end
 
     @posts = Post.all.order(created_at: :desc)

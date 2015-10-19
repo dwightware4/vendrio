@@ -5,6 +5,14 @@ window.RecentPosts = React.createClass({
         <div className="col-xs-9">
           <h3 className="page-header">Recent Posts</h3>
           {this.state.recentPosts.map(function(post){
+            
+            var postTitle = "";
+            if(post.title.length > 35){
+              postTitle = post.title.slice(0, 35) + "...";
+            }else {
+              postTitle = post.title;
+            }
+
             return(
               <div key={post.id} className="col-xs-4 test-class-name">
 
@@ -12,7 +20,7 @@ window.RecentPosts = React.createClass({
                   <img className="img-rounded" src={post.image ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + post.image : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445036262/no-image_pi8xii.png"}/>
                   <div className="caption">
                     <h6>{post.city}, {post.state}<span className="pull-right font-bold">${post.price}</span></h6>
-                    <h5>{post.title.slice(0, 22) + "..."}</h5>
+                    <h5>{postTitle}</h5>
                   </div>
                 </a>
 
