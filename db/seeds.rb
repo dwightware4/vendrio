@@ -232,86 +232,86 @@ post17 = Post.create(
 )
 
 img1 = Image.create(
-  url: "http://blogs-images.forbes.com/gordonkelly/files/2014/10/2014-10-19-16.04.58-1940x1413.jpg",
+  url: "v1445291504/iphone_yj4d6n.jpg",
   post_id: post1.id,
 )
 
 img2 = Image.create(
-  url: "http://hacknmod.com/wp-content/old/pics/6452-1.jpg",
+  url: "v1445291498/laser_gun_qvswk3.jpg",
   post_id: post2.id,
 )
 
 img3 = Image.create(
-  url: "http://topholographicdisplays.com/wp-content/uploads/2014/09/holographic_projector_2_by_shogi-d3cacdx.png",
+  url: "v1445291503/teapot_vpl0zi.png",
   post_id: post3.id,
 )
 
 img4 = Image.create(
-  url: "http://www.wired.com/wp-content/uploads/2015/06/lexus-hoverboard-ft.jpg",
+  url: "v1445291500/hoverboard_oncb4d.jpg",
   post_id: post4.id,
 )
 
 img5 = Image.create(
-  url: "http://www.tuvie.com/wp-content/uploads/cybersnail-futuristic-transportation1.jpg",
+  url: "v1445291500/time_machine_brfnsl.jpg",
   post_id: post5.id,
 )
 
 img6 = Image.create(
-  url: "http://www.rnrassociates.com/wordpress/wp-content/uploads/2012/04/futuristic-frog-ebike-by-frog-design2.jpg",
+  url: "v1445291499/motorcycle_ancrnk.jpg",
   post_id: post6.id,
 )
 
 img7 = Image.create(
-  url: "http://cdn.shopify.com/s/files/1/0193/6253/products/9153c.jpg?v=1435551201",
+  url: "v1445291502/shades_xvdou2.jpg",
   post_id: post7.id,
 )
 
 img8 = Image.create(
-  url: "http://thedesignhome.com/wp-content/uploads/2010/11/black-metal-modular-sofa-image.jpg",
+  url: "v1445291817/couch_tesepc.jpg",
   post_id: post8.id,
 )
 
 img9 = Image.create(
-  url: "http://i486.photobucket.com/albums/rr225/micquek/ConcertTicket.jpg",
+  url: "v1445291500/tickets_tppqih.jpg",
   post_id: post9.id,
 )
 
 img10 = Image.create(
-  url: "http://www.ecofriend.com/wp-content/uploads/2012/07/peugeot_frame_concept_npfie.jpg",
+  url: "v1445291499/peugeot_tkelzv.jpg",
   post_id: post10.id,
 )
 
 img11 = Image.create(
-  url: "http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/63/b7/63b7d1a79ce304891b8ba90774dc96e2.jpg?itok=PHSVIKoT",
+  url: "v1445291818/dream_spa_p58um7.jpg",
   post_id: post11.id,
 )
 
 img12 = Image.create(
-  url: "http://blog.gfk.com/wp-content/uploads/2015/06/B3.jpg",
+  url: "v1445291499/nikes_pfkqw6.jpg",
   post_id: post12.id,
 )
 
 img13 = Image.create(
-  url: "http://im.rediff.com/money/2013/apr/26imove17.jpg",
+  url: "v1445291499/imove_ak1mki.jpg",
   post_id: post13.id,
 )
 
 img14 = Image.create(
-  url: "http://www.wired.com/images_blogs/underwire/2012/01/Robot_and_Frank_filmstill1.jpg",
+  url: "v1445291499/robot_f3bq71.jpg",
   post_id: post14.id,
 )
 
 img15 = Image.create(
-  url: "https://itsinterestingdotcom.files.wordpress.com/2012/08/digital-capsule-medicine-normal5_43.jpg",
+  url: "v1445291500/pills_nnvwdl.jpg",
   post_id: post15.id,
 )
 
 img16 = Image.create(
-  url: "http://www.trendir.com/archives/thalassor-aska-duo-steam-shower.jpg",
+  url: "v1445291500/shower_ebzih8.jpg",
   post_id: post16.id,
 )
 
 img17 = Image.create(
-  url: "http://decoholic.org/wp-content/uploads/2013/07/futuristic-bedroom-design-28.jpg",
+  url: "v1445291818/bed_s8mvco.jpg",
   post_id: post17.id,
 )

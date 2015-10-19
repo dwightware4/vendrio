@@ -8,11 +8,11 @@ window.RecentPosts = React.createClass({
             return(
               <div key={post.id} className="col-xs-3 test-class-name">
 
-                <a href={"#/post/" + post.id} className="thumbnail row">
-                  <img className="img-rounded" src={post.image ? post.image : "http://res.cloudinary.com/vendrio/image/upload/v1445036262/no-image_pi8xii.png"}/>
+                <a href={"#/post/" + post.id} className="thumbnail">
+                  <img className="img-rounded" src={post.image ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_230/" + post.image : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_230/v1445036262/no-image_pi8xii.png"}/>
                   <div className="caption">
                     <h6>{post.city}, {post.state}<span className="pull-right font-bold">${post.price}</span></h6>
-                    <h5>{post.title}</h5>
+                    <h5>{post.title.slice(0, 19) + "..."}</h5>
                   </div>
                 </a>
 

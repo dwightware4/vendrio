@@ -49,7 +49,6 @@ window.PostForm = React.createClass({
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
       images: imageUrls,
-      thumbnails: thumbnailUrls,
       latitude: e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value,
       city: e.currentTarget.locality.value,
@@ -58,7 +57,6 @@ window.PostForm = React.createClass({
     };
     ApiUtil.createPost(options);
     imageUrls = [];
-    thumbnailUrls = [];
     this.history.pushState(null, '/', {});
   },
 

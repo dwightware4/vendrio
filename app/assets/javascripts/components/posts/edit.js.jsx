@@ -56,7 +56,6 @@ window.EditPost = React.createClass({
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
       images: imageUrls,
-      thumbnails: thumbnailUrls,
       latitude: e.currentTarget.lat.value === "" ? this.state.post.latitude : e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value === "" ? this.state.post.longitude : e.currentTarget.lng.value,
       city: e.currentTarget.locality.value === "" ? this.state.post.city : e.currentTarget.locality.value,
