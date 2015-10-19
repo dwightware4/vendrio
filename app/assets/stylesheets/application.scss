@@ -2,16 +2,16 @@
 @import "bootstrap";
 @import "theme";
 
+h3 {
+  color: white;
+}
+
 .font-bold {
   font-weight: bold;
 }
 
-h4 {
-  color: white;
-  text-align: center;
-}
-
 html {
+  margin: 0;
   overflow-y: scroll;
 }
 
@@ -54,7 +54,6 @@ label {
 
 body {
      margin: 0;
-     background: url('http://res.cloudinary.com/vendrio/image/upload/v1445036283/ubPzo5Z_s0h7kt.jpg');
      background-size: cover;
      background-repeat:no-repeat;
      display: compact;

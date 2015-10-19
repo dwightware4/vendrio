@@ -10,9 +10,9 @@ window.RecentPosts = React.createClass({
             }
 
             return(
-              <div key={post.id} className="col-xs-3">
+              <div key={post.id} className="col-xs-3 test-class-name">
 
-                <a href={"#/post/" + post.id} className="thumbnail">
+                <a href={"#/post/" + post.id} className="thumbnail row">
                   <img className="img-rounded" src={post.images ? post.images[0] : "http://res.cloudinary.com/vendrio/image/upload/v1445036262/no-image_pi8xii.png"}/>
                   <div className="caption">
                     <h6>{post.city}, {post.state}<span className="pull-right font-bold">${post.price}</span></h6>
