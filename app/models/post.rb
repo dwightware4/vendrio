@@ -12,8 +12,13 @@
 #  category_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  city        :string
+#  state       :string
 #
 
 class Post < ActiveRecord::Base
   validates :title, :description, :latitude, :longitude, :price, presence: true
+
+  belongs_to :user
+  has_many :images
 end

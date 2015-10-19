@@ -1,8 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
-    posts = Post.all.order(created_at: :desc)
-    render json: posts
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def show
@@ -14,6 +13,11 @@ class Api::PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     post.save!
+
+    params[:images].each do |image|
+      Image.create!({url: image, post_id: post.id})
+    end
+
     render json: Post.all.order(created_at: :desc)
   end
 
@@ -36,6 +40,6 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:title, :description, :latitude, :longitude, :price, :category_id, :city, :state, :images, :thumbnails)
+    params.permit(:title, :description, :latitude, :longitude, :price, :category_id, :city, :state)
   end
 end

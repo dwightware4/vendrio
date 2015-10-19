@@ -8,12 +8,11 @@ window.RecentPosts = React.createClass({
             if(typeof(post.images) === 'string'){
               post.images = JSON.parse(post.images);
             }
-
             return(
               <div key={post.id} className="col-xs-3 test-class-name">
 
                 <a href={"#/post/" + post.id} className="thumbnail row">
-                  <img className="img-rounded" src={post.images ? post.images[0] : "http://res.cloudinary.com/vendrio/image/upload/v1445036262/no-image_pi8xii.png"}/>
+                  <img className="img-rounded" src={post.image ? post.image : "http://res.cloudinary.com/vendrio/image/upload/v1445036262/no-image_pi8xii.png"}/>
                   <div className="caption">
                     <h6>{post.city}, {post.state}<span className="pull-right font-bold">${post.price}</span></h6>
                     <h5>{post.title}</h5>

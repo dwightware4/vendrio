@@ -5,7 +5,7 @@ ApiUtil = {
       dataType: 'json',
 
       success: function(posts) {
-        ApiActions.receivePosts(posts);
+        ApiActions.receivePosts(posts.products);
       }
     });
   },
