@@ -5,9 +5,6 @@ window.RecentPosts = React.createClass({
         <div className="col-xs-9">
           <h3 className="page-header">Recent Posts</h3>
           {this.state.recentPosts.map(function(post){
-            if(typeof(post.images) === 'string'){
-              post.images = JSON.parse(post.images);
-            }
             return(
               <div key={post.id} className="col-xs-3 test-class-name">
 
