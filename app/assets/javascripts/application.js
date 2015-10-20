@@ -15,6 +15,7 @@
 //= require react
 //= require react_ujs
 //= require flux
+//= require jquery.geocomplete
 //= require jquery.ui.widget
 //= require eventemitter
 //= require router.js
