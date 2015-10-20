@@ -18,30 +18,33 @@ window.PostShow = React.createClass({
           </div>
 
           <div className="col-xs-6">
-            <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
+
+            <div id="carousel-example-generic" className="carousel slide">
               <ol className="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
               </ol>
-              <div className="carousel-inner" role="listbox">
-                <div className="carousel-item active">
-                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fit,h_500,w_500/v1445291500/pills_nnvwdl.jpg" />
+
+              <div className="carousel-inner">
+                <div className="item active">
+                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445291500/pills_nnvwdl.jpg" />
                 </div>
-                <div className="carousel-item">
-                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fit,h_500,w_500/v1445291499/nikes_pfkqw6.jpg" />
-                </div>
-                <div className="carousel-item">
-                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fit,h_500,w_500/v1445291818/dream_spa_p58um7.jpg" />
+
+                  <div className="item">
+                    <img src="http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445291500/shower_ebzih8.jpg" />
+                  </div>
+
+                <div className="item">
+                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445291818/bed_s8mvco.jpg" />
                 </div>
               </div>
-              <a className="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span className="icon-prev" aria-hidden="true"></span>
-                <span className="sr-only">Previous</span>
+
+              <a className="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span className="icon-prev"></span>
               </a>
-              <a className="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span className="icon-next" aria-hidden="true"></span>
-                <span className="sr-only">Next</span>
+              <a className="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span className="icon-next"></span>
               </a>
             </div>
           </div>
