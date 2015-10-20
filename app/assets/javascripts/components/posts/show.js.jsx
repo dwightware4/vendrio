@@ -61,7 +61,7 @@ window.PostShow = React.createClass({
 
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
-    $('.carousel').carousel();
+    $('#carousel-example-generic').carousel();
   },
 
   componentWillUnmount: function() {
