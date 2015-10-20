@@ -15,7 +15,7 @@
 //= require react
 //= require react_ujs
 //= require flux
-//= require_tree ../../../vendor/assets/javascripts/.
+//= require jquery.ui.widget
 //= require eventemitter
 //= require router.js
 //= require bootstrap
