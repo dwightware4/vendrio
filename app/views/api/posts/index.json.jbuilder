@@ -10,7 +10,7 @@ json.products @posts do |post|
   json.category_id post.category_id
   json.id post.id
 
-  post.images.each do |image|
-    json.image image.url
+  json.images post.images do |image|
+    json.url image.url
   end
 end

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :posts, only: [:index, :show, :create, :destroy, :update]
-    resources :categories, only: [:index]   
+    resources :categories, only: [:index]
   end
 end
