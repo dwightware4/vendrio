@@ -2,6 +2,14 @@
 @import "bootstrap";
 @import "theme";
 
+.move-down {
+  padding-top: 45px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
 h3 {
   color: white;
 }
@@ -56,7 +64,7 @@ body {
      margin: 0;
      background-size: cover;
      background-repeat:no-repeat;
-     background-image: url(http://res.cloudinary.com/vendrio/image/upload/v1445036283/ubPzo5Z_s0h7kt.jpg);
+     background-color: black;
      display: compact;
      font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -2,7 +2,7 @@ window.SideBar = React.createClass({
   mixins: [ReactRouter.History],
   render: function() {
     return(
-      <div className="navbar navbar-default sidebar col-xs-2" role="navigation">
+      <div className="navbar navbar-default sidebar col-xs-2 move-down" role="navigation">
         <h2>Categories:</h2>
         <ul className="list-group">
           {this.state.categories.map(function(category){

@@ -20,10 +20,10 @@ cat19 = Category.create(title: "Instruments")
 cat20 = Category.create(title: "Jewelry")
 cat21 = Category.create(title: "Materials")
 cat22 = Category.create(title: "Motorcycles")
-cat23 = Category.create(title: "Sporting")
-cat24 = Category.create(title: "Tickets")
-cat25 = Category.create(title: "Tools")
-cat26 = Category.create(title: "Toys")
+cat23 = Category.create(title: "Robots")
+cat24 = Category.create(title: "Sporting")
+cat25 = Category.create(title: "Tickets")
+cat26 = Category.create(title: "Tools")
 cat27 = Category.create(title: "Video Games")
 cat28 = Category.create(title: "Wanted")
 
@@ -37,7 +37,7 @@ post1 = Post.create(
   city: "San Francisco",
   price: 7000,
   user_id: user1.id,
-  category_id: cat1.id
+  category_id: cat10.id
 )
 
 post2 = Post.create(
@@ -48,7 +48,7 @@ post2 = Post.create(
   city: "San Francisco",
   price: 18000,
   user_id: user1.id,
-  category_id: cat1.id
+  category_id: cat12.id
 )
 
 post3 = Post.create(
@@ -60,7 +60,7 @@ post3 = Post.create(
   state: "CA",
   price: 1000000,
   user_id: user1.id,
-  category_id: cat3.id
+  category_id: cat12.id
 )
 
 post4 = Post.create(
@@ -84,7 +84,7 @@ post5 = Post.create(
   state: "CA",
   price: 50,
   user_id: user1.id,
-  category_id: cat25.id
+  category_id: cat14.id
 )
 
 post6 = Post.create(
@@ -108,7 +108,7 @@ post7 = Post.create(
   state: "CA",
   price: 4000,
   user_id: user1.id,
-  category_id: cat25.id
+  category_id: cat11.id
 )
 
 post8 = Post.create(
@@ -144,7 +144,7 @@ post10 = Post.create(
   state: "FL",
   price: 100000,
   user_id: user1.id,
-  category_id: cat11.id
+  category_id: cat9.id
 )
 
 post11 = Post.create(
@@ -156,7 +156,7 @@ post11 = Post.create(
   state: "NE",
   price: 3000,
   user_id: user1.id,
-  category_id: cat23.id
+  category_id: cat14.id
 )
 
 post12 = Post.create(
@@ -192,7 +192,7 @@ post14 = Post.create(
   state: "WI",
   price: 200000,
   user_id: user1.id,
-  category_id: cat7.id
+  category_id: cat23.id
 )
 
 post15 = Post.create(
@@ -204,7 +204,7 @@ post15 = Post.create(
   state: "WI",
   price: 2000,
   user_id: user1.id,
-  category_id: cat14.id
+  category_id: cat17.id
 )
 
 post16 = Post.create(
@@ -216,7 +216,7 @@ post16 = Post.create(
   state: "NE",
   price: 10000,
   user_id: user1.id,
-  category_id: cat9.id
+  category_id: cat16.id
 )
 
 post17 = Post.create(
