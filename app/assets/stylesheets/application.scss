@@ -2,7 +2,11 @@
 @import "bootstrap";
 @import "theme";
 
-.move-down {
+.move-down-75 {
+  padding-top: 75px;
+}
+
+.move-down-45 {
   padding-top: 45px;
 }
 
@@ -64,7 +68,7 @@ body {
      margin: 0;
      background-size: cover;
      background-repeat:no-repeat;
-     background-color: black;
+     background-image: url(http://res.cloudinary.com/vendrio/image/upload/v1445036283/ubPzo5Z_s0h7kt.jpg);
      display: compact;
      font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

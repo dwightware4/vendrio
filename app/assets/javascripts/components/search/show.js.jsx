@@ -8,7 +8,7 @@ window.SearchIndex = React.createClass({
               <h2 className="page-header">Nothing Matches Your Search</h2>
             </div>
           </div>
-        )
+        );
       }else{
         return(
           <div className="jumbotron">

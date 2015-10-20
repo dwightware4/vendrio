@@ -2,7 +2,6 @@ window.PostShow = React.createClass({
   mixins: [ReactRouter.History],
   render: function(){
     if(this.state.post === undefined) { return <div></div>; }
-
     return(
       <div className="jumbotron">
         <div className="row">
@@ -17,7 +16,7 @@ window.PostShow = React.createClass({
             <button className="btn btn-default navbar-btn" onClick={this.editPost} value={this.state.post.id}>Edit Post</button>
           </div>
 
-          <div className="col-xs-6">
+          <div className="col-xs-6 move-down-75">
 
             <div id="carousel-example-generic" className="carousel slide">
               <ol className="carousel-indicators">
@@ -28,15 +27,7 @@ window.PostShow = React.createClass({
 
               <div className="carousel-inner">
                 <div className="item active">
-                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445291500/pills_nnvwdl.jpg" />
-                </div>
-
-                  <div className="item">
-                    <img src="http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445291500/shower_ebzih8.jpg" />
-                  </div>
-
-                <div className="item">
-                  <img src="http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445291818/bed_s8mvco.jpg" />
+                  <img src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.image} />
                 </div>
               </div>
 

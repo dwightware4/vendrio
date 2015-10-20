@@ -36,7 +36,7 @@ window.NavBar = React.createClass({
                     <option value="-1">All</option>
                       {
                         this.state.categories.map(function(category){
-                          return <option key={category.id} value={category.id}>{category.title}</option>
+                          return <option key={category.id} value={category.id}>{category.title}</option>;
                         })
                       }
                   </select>
