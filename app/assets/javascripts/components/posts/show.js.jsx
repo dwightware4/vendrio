@@ -27,7 +27,7 @@ window.PostShow = React.createClass({
 
               <div className="carousel-inner">
                 <div className="item active">
-                  <img src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url} />
+                  <img className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445036262/no-image_pi8xii.png"}/>
                 </div>
               </div>
 
