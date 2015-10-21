@@ -7,7 +7,7 @@ window.CategoryShow = React.createClass({
       <div className="jumbotron">
         <div className="row">
           <h2 className="page-header">{this.state.category.title}</h2><br/>
-          <div className="col-xs-5">
+          <div className="col-xs-7">
             <div>
               <ul>
                 {this.state.posts.map(function(post){
@@ -16,7 +16,7 @@ window.CategoryShow = React.createClass({
               </ul>
             </div>
           </div>
-          <div className="col-xs-7">
+          <div className="col-xs-5">
             <Map />
           </div>
         </div>

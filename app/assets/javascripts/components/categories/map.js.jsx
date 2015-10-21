@@ -12,7 +12,7 @@ window.Map = React.createClass({
   },
 
   componentDidMount: function(){
-    PostStore.addChangeListener(this._updateState);
+    FilterParamsStore.addChangeListener(this._updateState);
     this.map = React.findDOMNode(this.refs.map);
 
     var mapOptions = {
@@ -55,13 +55,12 @@ window.Map = React.createClass({
     var newPosts = PostStore.all();
 
     newPosts.forEach(function(post){
-      var LatLng = {lat: post.lat, lng: post.lng};
+      var LatLng = {lat: post.latitude, lng: post.longitude};
       var marker = new google.maps.Marker({
         position: LatLng,
         map: this.map,
         title: post.title,
       });
-
       allMarkers.push(marker);
     }.bind(this));
   },
