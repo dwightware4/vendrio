@@ -1,5 +1,6 @@
 window.CategoryShow = React.createClass({
   mixins: [ReactRouter.History],
+
   render: function(){
     return(
       <div className="jumbotron">
@@ -22,15 +23,15 @@ window.CategoryShow = React.createClass({
     };
   },
 
+  _updateState: function(){
+    this.setState({posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))});
+  },
+
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
   },
 
   componentWillUnmount: function() {
     PostStore.removeChangeListener(this._updateState);
-  },
-
-  _updateState: function(){
-    this.setState({posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))});
   },
 });

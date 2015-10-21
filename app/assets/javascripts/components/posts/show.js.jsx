@@ -1,5 +1,6 @@
 window.PostShow = React.createClass({
   mixins: [ReactRouter.History],
+
   render: function(){
     if(this.state.post === undefined) { return <div></div>; }
     return(
@@ -21,14 +22,30 @@ window.PostShow = React.createClass({
             <div id="carousel-example-generic" className="carousel slide">
               <ol className="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  {this.state.post.images.map(function(image, idx){
+                    if(idx > 0 && idx < 15){
+                      return(
+                        <li key={idx} data-target="#carousel-example-generic" data-slide-to={idx} />
+                      );
+                    }
+                  })}
               </ol>
 
               <div className="carousel-inner">
                 <div className="item active">
                   <img className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445036262/no-image_pi8xii.png"}/>
                 </div>
+
+                {this.state.post.images.map(function(image, idx){
+                  if(idx > 0){
+                    return(
+                      <div key={idx} className="item">
+                        <img className="img-rounded" src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + image.url}/>
+                      </div>
+                    );
+                  }
+                })}
+
               </div>
 
               <a className="left carousel-control" href="#carousel-example-generic" data-slide="prev">

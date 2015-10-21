@@ -1,4 +1,5 @@
 window.CategoryIndex = React.createClass({
+  
   render: function() {
     return(
       <div>
@@ -15,15 +16,15 @@ window.CategoryIndex = React.createClass({
     return {categories: CategoryStore.all()};
   },
 
+  _updateState: function(){
+    this.setState({categories: CategoryStore.all()});
+  },
+
   componentDidMount: function() {
     CategoryStore.addChangeListener(this._updateState);
   },
 
   componentWillUnmount: function() {
     CategoryStore.removeChangeListener(this._updateState);
-  },
-
-  _updateState: function(){
-    this.setState({categories: CategoryStore.all()});
   },
 });

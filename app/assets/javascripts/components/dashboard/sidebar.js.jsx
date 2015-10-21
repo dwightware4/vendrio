@@ -1,5 +1,6 @@
 window.SideBar = React.createClass({
   mixins: [ReactRouter.History],
+
   render: function() {
     return(
       <div className="navbar navbar-default sidebar col-xs-2 move-down" role="navigation">
@@ -17,15 +18,15 @@ window.SideBar = React.createClass({
     return {categories: CategoryStore.all()};
   },
 
+  _updateState: function(){
+    this.setState({categories: CategoryStore.all()});
+  },
+
   componentDidMount: function() {
     CategoryStore.addChangeListener(this._updateState);
   },
 
   componentWillUnmount: function() {
     CategoryStore.removeChangeListener(this._updateState);
-  },
-
-  _updateState: function(){
-    this.setState({categories: CategoryStore.all()});
   },
 });

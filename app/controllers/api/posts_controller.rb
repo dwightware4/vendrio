@@ -14,8 +14,8 @@ class Api::PostsController < ApplicationController
     post.user_id = current_user.id
     post.save!
     if params[:images]
-      params[:images].each do |image|
-        Image.create!({url: image, post_id: post.id})
+      params[:images].each_with_index do |image, index|
+        Image.create!({url: image, post_id: post.id, public_id: params[:public_ids][index]})
       end
     end
 

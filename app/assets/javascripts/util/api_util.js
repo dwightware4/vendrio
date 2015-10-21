@@ -49,6 +49,24 @@ ApiUtil = {
     });
   },
 
+  deleteImage: function(imageId, publicId) {
+    // $.ajax({
+    //   url: 'https://888137241648288:IHxj7bmKmwCGPFLZNGe5gqVy81g@api.cloudinary.com/v1_1/vendrio/resources/image/upload?public_ids=' + publicId,
+    //   type: 'DELETE',
+    // });
+
+    $.ajax({
+      url: 'api/images/' + imageId,
+      type: 'DELETE',
+      dataType: 'json',
+      data: imageId,
+
+      success: function(posts) {
+        ApiActions.receivePosts(posts.products);
+      }
+    });
+  },
+
   fetchCategories: function() {
     $.ajax({
       url: 'api/categories',

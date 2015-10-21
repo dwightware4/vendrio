@@ -1,6 +1,8 @@
 var imageUrls = [];
+var test = [];
 
 window.Cloudinary = React.createClass({
+
   render: function () {
     return(
       <div>
@@ -14,12 +16,14 @@ window.Cloudinary = React.createClass({
       {
         cloud_name: 'vendrio',
         upload_preset: 'isuzt2ap',
-        cropping: 'server', 'folder': 'user_photos'
+        cropping: 'server', 'folder': 'user_photos',
+        stylesheet: 'minimal',
       },
       function(error, result) { this.setImageUrl(error, result); }.bind(this));
   },
 
   setImageUrl: function(error, result) {
       imageUrls.push(result[0].path);
+      test.push(result[0].public_id);
   },
 });

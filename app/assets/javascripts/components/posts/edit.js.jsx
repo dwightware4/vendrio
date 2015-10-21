@@ -1,7 +1,95 @@
-
-
 window.EditPost = React.createClass({
   mixins: [ReactRouter.History],
+
+  render: function(){
+    debugger
+    if(this.state.post === undefined) { return <div></div>; }
+    var imgId = this.state.post.images.length > 0 ? this.state.post.images[0].id : "";
+
+    if(this.state.post === undefined) { return <div></div>; }
+    return(
+      <div className="jumbotron">
+        <div className="container">
+          <div className="row-fluid">
+
+{/* start post details colum */}
+            <div className="col-xs-6">
+              <h2 className="page-header">Edit Post</h2>
+              <form onSubmit={this.editPost}>
+                <div className="form-group">
+                  <input className="form-control" type="text" name="title" defaultValue={this.state.post.title}></input>
+                  <input className="form-control" type="text" name="description" defaultValue={this.state.post.description}></input>
+                  <input className="form-control" type="text" name="price" defaultValue={this.state.post.price}></input>
+                  <select className="form-control" name="category">
+                    <option value="-1">Select Category</option>
+                    {
+                      this.state.categories.map(function(category){
+                        return <option key={category.id} value={category.id} selected={category.id === this.state.post.category_id ? 'selected' : false}>{category.title }</option>;
+                      }.bind(this))
+                    }
+                  </select>
+
+                  <GeoComplete />
+                  <Cloudinary />
+
+                  <input className="form-control btn btn-primary" type="submit" />
+                </div>
+              </form>
+            </div>
+{/* end post details column */}
+
+{/* start image carousel */}
+        <div className="col-xs-6 move-down-75">
+
+          <div id="carousel-example-generic" className="carousel slide" data-interval="false">
+            <ol className="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
+                {this.state.post.images.map(function(image, idx){
+                  if(idx > 0 && idx < 15){
+                    return(
+                      <li key={idx} data-target="#carousel-example-generic" data-slide-to={idx} />
+                    );
+                  }
+                })}
+            </ol>
+
+            <div className="carousel-inner">
+              <div className="item active">
+                <img data-id={imgId} className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445036262/no-image_pi8xii.png"}/>
+              </div>
+              {this.state.post.images.map(function(image, idx){
+                if(idx > 0){
+                  return(
+                    <div key={idx} className="item">
+                      <img data-id={image.id} data-public-id={image.public_id} className="img-rounded" src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + image.url}/>
+
+                    </div>
+                  );
+                }
+              })}
+            </div>
+
+            <a className="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span className="icon-prev"></span>
+            </a>
+            <a className="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span className="icon-next"></span>
+            </a>
+          </div>
+
+          <div className="overlay">
+            <button onClick={this.deleteImage} className="btn carousel-button btn-danger center-block move-down-20">
+              <i className="fa fa-exchange"></i> Delete Photo
+            </button>
+          </div>
+
+        </div>
+{/* end image carousel */}
+          </div>
+        </div>
+      </div>
+    );
+  },
 
   getInitialState: function() {
     return {
@@ -10,42 +98,31 @@ window.EditPost = React.createClass({
     };
   },
 
-  render: function(){
-    return(
-      <div className="jumbotron">
-        <div className="container">
-        <div className="row-fluid">
+  _updateState: function() {
+    this.setState({
+      post: PostStore.find(parseInt(this.props.params.postId)),
+    });
+  },
 
-{/* post details colum */}
-          <div className="col-xs-6 col-xs-offset-3">
-            <h2 className="page-header">Edit Post</h2>
-            <form onSubmit={this.editPost}>
-              <div className="form-group">
-                <input className="form-control" type="text" name="title" defaultValue={this.state.post.title}></input>
-                <input className="form-control" type="text" name="description" defaultValue={this.state.post.description}></input>
-                <input className="form-control" type="text" name="price" defaultValue={this.state.post.price}></input>
-                <select className="form-control" name="category">
-                  <option value="-1">Select Category</option>
-                  {
-                    this.state.categories.map(function(category){
-                      return <option key={category.id} value={category.id} selected={category.id === this.state.post.category_id ? 'selected' : false}>{category.title }</option>;
-                    }.bind(this))
-                  }
-                </select>
+  componentDidMount: function() {
+    PostStore.addChangeListener(this._updateState);
+    $('#carousel-example-generic').carousel({
+      pause: true,
+      interval: false
+    });
+    $("#geocomplete").geocomplete({details: "#addressDetails"});
+  },
 
-                <GeoComplete />
-                <Cloudinary />
+  componentWillUnmount: function() {
+    PostStore.removeChangeListener(this._updateState);
+  },
 
-                <input className="form-control btn btn-primary" type="submit" />
-              </div>
-            </form>
-          </div>
-{/* end post details */}
-
-        </div>
-        </div>
-      </div>
-    );
+  deleteImage: function(e) {
+    e.preventDefault();
+    confirm("Are you sure?");
+    var publicId = parseInt($('.item.active img').attr("data-public-id"));
+    var imageId = parseInt($('.item.active img').attr("data-id"));
+    ApiUtil.deleteImage(imageId, publicId);
   },
 
   editPost: function(e){
@@ -56,6 +133,7 @@ window.EditPost = React.createClass({
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
       images: imageUrls,
+      public_ids: publicIds,
       latitude: e.currentTarget.lat.value === "" ? this.state.post.latitude : e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value === "" ? this.state.post.longitude : e.currentTarget.lng.value,
       city: e.currentTarget.locality.value === "" ? this.state.post.city : e.currentTarget.locality.value,
@@ -66,9 +144,5 @@ window.EditPost = React.createClass({
     imageUrls = [];
     thumbnailUrls = [];
     this.history.pushState(null, '/', {});
-  },
-
-  componentDidMount: function() {
-    $("#geocomplete").geocomplete({details: "#addressDetails"});
   },
 });

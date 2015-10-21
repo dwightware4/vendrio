@@ -1,5 +1,6 @@
 window.NavBar = React.createClass({
   mixins: [ReactRouter.History],
+
   render: function() {
     return(
       <nav className="navbar navbar-default navbar-inverse">
@@ -56,19 +57,15 @@ window.NavBar = React.createClass({
     );
   },
 
-  performSearch: function(e) {
-    e.preventDefault();
-    var keywords = e.currentTarget.keywords.value.split(' ');
-    var category_id = e.currentTarget.category.value;
-    this.history.pushState(null, '/search/', {keywords: keywords, category_id: category_id});
-
-  },
-
   getInitialState: function() {
     return {
       categories: CategoryStore.all(),
       posts: PostStore.all(),
-    }
+    };
+  },
+
+  _updateState: function(){
+    this.setState({categories: CategoryStore.all()});
   },
 
   componentDidMount: function() {
@@ -79,7 +76,10 @@ window.NavBar = React.createClass({
     CategoryStore.removeChangeListener(this._updateState);
   },
 
-  _updateState: function(){
-    this.setState({categories: CategoryStore.all()});
+  performSearch: function(e) {
+    e.preventDefault();
+    var keywords = e.currentTarget.keywords.value.split(' ');
+    var category_id = e.currentTarget.category.value;
+    this.history.pushState(null, '/search/', {keywords: keywords, category_id: category_id});
   },
 });

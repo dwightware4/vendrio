@@ -1,4 +1,5 @@
 window.RecentPosts = React.createClass({
+
   render: function() {
     return(
       <div className="row">
@@ -23,7 +24,6 @@ window.RecentPosts = React.createClass({
                   </div>
                 </a>
 
-
               </div>
             );
           }.bind(this))};
@@ -36,15 +36,15 @@ window.RecentPosts = React.createClass({
     return({recentPosts: PostStore.recent()});
   },
 
+  _updateState: function(){
+    this.setState({recentPosts: PostStore.recent()});
+  },
+
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
   },
 
   componentWillUnmount: function() {
     PostStore.removeChangeListener(this._updateState);
-  },
-
-  _updateState: function(){
-    this.setState({recentPosts: PostStore.recent()});
   },
 });

@@ -1,5 +1,6 @@
 window.PostIndexItem = React.createClass({
   mixins: [ReactRouter.History],
+  
   render: function () {
     return(
       <li onClick={this.showPost} className="list-group-item">

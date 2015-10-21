@@ -16,15 +16,15 @@ window.PostIndex = React.createClass({
     return {posts: PostStore.all()};
   },
 
+  _updateState: function(){
+    this.setState({posts: PostStore.all()});
+  },
+
   componentDidMount: function() {
     PostStore.addChangeListener(this._updateState);
   },
 
   componentWillUnmount: function() {
     PostStore.removeChangeListener(this._updateState);
-  },
-
-  _updateState: function(){
-    this.setState({posts: PostStore.all()});
   },
 });

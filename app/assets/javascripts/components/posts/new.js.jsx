@@ -1,5 +1,6 @@
 window.PostForm = React.createClass({
   mixins: [ReactRouter.History],
+
   render: function(){
     return(
       <div className="jumbotron">
@@ -42,22 +43,8 @@ window.PostForm = React.createClass({
     return {categories: CategoryStore.all()};
   },
 
-  createPost: function(e){
-    e.preventDefault();
-    var options = {
-      title: e.currentTarget.title.value,
-      description: e.currentTarget.description.value,
-      price: e.currentTarget.price.value,
-      images: imageUrls,
-      latitude: e.currentTarget.lat.value,
-      longitude: e.currentTarget.lng.value,
-      city: e.currentTarget.locality.value,
-      state: e.currentTarget.administrative_area_level_1_short.value,
-      category_id: e.currentTarget.category.value,
-    };
-    ApiUtil.createPost(options);
-    imageUrls = [];
-    this.history.pushState(null, '/', {});
+  _updateState: function(){
+    this.setState({categories: CategoryStore.all()});
   },
 
   componentDidMount: function() {
@@ -69,7 +56,23 @@ window.PostForm = React.createClass({
     CategoryStore.removeChangeListener(this._updateState);
   },
 
-  _updateState: function(){
-    this.setState({categories: CategoryStore.all()});
+  createPost: function(e){
+    e.preventDefault();
+    var options = {
+      title: e.currentTarget.title.value,
+      description: e.currentTarget.description.value,
+      price: parseInt(e.currentTarget.price.value),
+      images: imageUrls,
+      public_ids: test,
+      latitude: e.currentTarget.lat.value,
+      longitude: e.currentTarget.lng.value,
+      city: e.currentTarget.locality.value,
+      state: e.currentTarget.administrative_area_level_1_short.value,
+      category_id: e.currentTarget.category.value,
+    };
+    ApiUtil.createPost(options);
+    imageUrls = [];
+    publicIds = [];
+    this.history.pushState(null, '/', {});
   },
 });

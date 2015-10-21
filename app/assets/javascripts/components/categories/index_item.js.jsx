@@ -1,8 +1,5 @@
 window.CategoryIndexItem = React.createClass({
   mixins: [ReactRouter.History],
-  showCategory: function () {
-    this.history.pushState(null, '/category/' + this.props.category.id);
-  },
 
   render: function () {
     return(
@@ -10,5 +7,9 @@ window.CategoryIndexItem = React.createClass({
         {this.props.category.title} <span className="badge">{PostStore.postsByCategory(this.props.category.id).length}</span>
       </li>
     );
+  },
+
+  showCategory: function () {
+    this.history.pushState(null, '/category/' + this.props.category.id);
   },
 });
