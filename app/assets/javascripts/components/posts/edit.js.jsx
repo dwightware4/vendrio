@@ -118,10 +118,30 @@ window.EditPost = React.createClass({
 
   deleteImage: function(e) {
     e.preventDefault();
-    if(confirm("Are you sure?")){
-      var imageId = parseInt($('.item.active img').attr("data-id"));
-      ApiUtil.deleteImage(imageId);
-    }
+
+    var previousWindowKeyDown = window.onkeydown;
+    swal({
+      title: "Are you sure you want to delete this image?",
+      text: "You will not be able to recover it later!",
+      type: "info",
+      allowEscapeKey: true,
+      allowOutsideClick: true,
+      showCancelButton: true,
+      confirmButtonColor: "#2282E3",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel please!",
+      closeOnConfirm: false,
+      closeOnCancel: true
+    },
+    function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+
+      if(isConfirm) {
+        var imageId = parseInt($('.item.active img').attr("data-id"));
+        ApiUtil.deleteImage(imageId);
+        swal("Deleted!", "That image has been deleted.", "success");
+      }
+    }.bind(this));
   },
 
   editPost: function(e){
@@ -132,7 +152,6 @@ window.EditPost = React.createClass({
       description: e.currentTarget.description.value,
       price: e.currentTarget.price.value,
       images: imageUrls,
-      public_ids: publicIds,
       latitude: e.currentTarget.lat.value === "" ? this.state.post.latitude : e.currentTarget.lat.value,
       longitude: e.currentTarget.lng.value === "" ? this.state.post.longitude : e.currentTarget.lng.value,
       city: e.currentTarget.locality.value === "" ? this.state.post.city : e.currentTarget.locality.value,
@@ -141,7 +160,6 @@ window.EditPost = React.createClass({
     };
     ApiUtil.editPost(this.state.post.id, options);
     imageUrls = [];
-    thumbnailUrls = [];
     this.history.pushState(null, '/', {});
   },
 });

@@ -81,10 +81,31 @@ window.PostShow = React.createClass({
 
   deletePost: function(e) {
     e.preventDefault();
-    if(confirm("Are you sure you want to delete this post?")){
-      ApiUtil.deletePost(e.currentTarget.value);
-      this.history.pushState(null, '/', {});
-    }
+    var post = e.currentTarget.value;
+
+    var previousWindowKeyDown = window.onkeydown;
+    swal({
+      title: "Are you sure you want to delete this post?",
+      text: "You will not be able to recover it later!",
+      type: "info",
+      allowEscapeKey: true,
+      allowOutsideClick: true,
+      showCancelButton: true,
+      confirmButtonColor: "#2282E3",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel please!",
+      closeOnConfirm: false,
+      closeOnCancel: true
+    },
+    function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+
+      if(isConfirm) {
+        ApiUtil.deletePost(post);
+        this.history.pushState(null, '/', {});
+        swal("Deleted!", "Your post has been deleted.", "success");
+      }
+    }.bind(this));
   },
 
   editPost: function(e) {
