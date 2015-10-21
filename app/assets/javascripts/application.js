@@ -17,6 +17,7 @@
 //= require flux
 //= require jquery.geocomplete
 //= require jquery.ui.widget
+//= require sweetalert.min
 //= require eventemitter
 //= require router.js
 //= require bootstrap

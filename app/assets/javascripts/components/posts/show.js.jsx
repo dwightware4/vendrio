@@ -80,10 +80,11 @@ window.PostShow = React.createClass({
   },
 
   deletePost: function(e) {
-    confirm("Are you sure you want to delete this post?");
     e.preventDefault();
-    ApiUtil.deletePost(e.currentTarget.value);
-    this.history.pushState(null, '/', {});
+    if(confirm("Are you sure you want to delete this post?")){
+      ApiUtil.deletePost(e.currentTarget.value);
+      this.history.pushState(null, '/', {});
+    }
   },
 
   editPost: function(e) {

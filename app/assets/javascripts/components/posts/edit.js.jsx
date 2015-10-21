@@ -2,7 +2,6 @@ window.EditPost = React.createClass({
   mixins: [ReactRouter.History],
 
   render: function(){
-    debugger
     if(this.state.post === undefined) { return <div></div>; }
     var imgId = this.state.post.images.length > 0 ? this.state.post.images[0].id : "";
 
@@ -119,10 +118,10 @@ window.EditPost = React.createClass({
 
   deleteImage: function(e) {
     e.preventDefault();
-    confirm("Are you sure?");
-    var publicId = parseInt($('.item.active img').attr("data-public-id"));
-    var imageId = parseInt($('.item.active img').attr("data-id"));
-    ApiUtil.deleteImage(imageId, publicId);
+    if(confirm("Are you sure?")){
+      var imageId = parseInt($('.item.active img').attr("data-id"));
+      ApiUtil.deleteImage(imageId);
+    }
   },
 
   editPost: function(e){
