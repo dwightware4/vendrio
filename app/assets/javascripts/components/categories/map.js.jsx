@@ -14,6 +14,7 @@ window.Map = React.createClass({
 
   componentDidMount: function(){
     FilterParamsStore.addChangeListener(this._updateState);
+
     this.map = React.findDOMNode(this.refs.map);
 
     var mapOptions = {
