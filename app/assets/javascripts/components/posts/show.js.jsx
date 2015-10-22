@@ -58,6 +58,7 @@ window.PostShow = React.createClass({
           </div>
 
         </div>
+        <button className="btn btn-default navbar-btn text-center" onClick={this.navigateBack}>See All Posts in This Category</button>
       </div>
     );
   },
@@ -111,5 +112,9 @@ window.PostShow = React.createClass({
   editPost: function(e) {
     e.preventDefault();
     this.history.pushState(null, 'edit/' + e.currentTarget.value, {});
+  },
+
+  navigateBack: function() {
+    this.history.pushState(null, '/category/' + this.state.post.category_id);
   },
 });

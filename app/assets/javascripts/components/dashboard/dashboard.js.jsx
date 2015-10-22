@@ -1,5 +1,5 @@
 window.Dashboard = React.createClass({
-  
+
   render: function() {
     return(
       <div>
@@ -8,5 +8,10 @@ window.Dashboard = React.createClass({
         <RecentPosts />
       </div>
     );
+  },
+
+  componentDidMount: function() {
+    ApiUtil.fetchPosts();
+    ApiUtil.fetchCategories();
   },
 });

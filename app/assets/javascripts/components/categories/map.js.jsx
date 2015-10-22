@@ -38,8 +38,6 @@ window.Map = React.createClass({
       bounds = {northEast: northEast, southWest: southWest};
       FilterActions.changeBounds(bounds);
     }.bind(this));
-
-    FilterParamsStore.addChangeListener(this._updateState);
   },
 
   clearMarkers: function() {

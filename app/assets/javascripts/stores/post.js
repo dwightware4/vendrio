@@ -19,7 +19,6 @@
             posts.push(post);
           }
         });
-
       return posts;
     },
 
