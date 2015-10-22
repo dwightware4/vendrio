@@ -58,11 +58,18 @@ window.Map = React.createClass({
     var newPosts = PostStore.byBoundsAndCategory(bounds, catId);
     newPosts.forEach(function(post){
       var LatLng = {lat: post.latitude, lng: post.longitude};
+
       var marker = new google.maps.Marker({
         position: LatLng,
         map: this.map,
         title: post.title,
+        icon: 'http://res.cloudinary.com/vendrio/image/upload/v1445474446/mall_pvr5ak.png',
       });
+
+      marker.addListener('click', function() {
+        this.history.pushState(null, '/post/' + post.id);
+      }.bind(this));
+
       allMarkers.push(marker);
     }.bind(this));
   },

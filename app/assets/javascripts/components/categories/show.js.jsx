@@ -4,7 +4,7 @@ window.CategoryShow = React.createClass({
   mixins: [ReactRouter.History],
 
   render: function(){
-    if(this.state.category === undefined) { return <div>"this.state.category is undefined"</div>; }
+    if(this.state.category === undefined) { return <div></div>; }
     return(
       <div className="jumbotron">
         <div className="row">
@@ -27,7 +27,9 @@ window.CategoryShow = React.createClass({
   },
 
   getInitialState: function() {
-    catId = CategoryStore.find(parseInt(this.props.params.categoryId)).id;
+    ApiUtil.fetchCategories();
+    var category = CategoryStore.find(parseInt(this.props.params.categoryId));
+    if(category) {catId = category.id;}
     return {
       category: CategoryStore.find(parseInt(this.props.params.categoryId)),
       posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))
