@@ -14,6 +14,11 @@ $(function() {
           </div>
       );
     },
+
+    componentDidMount: function() {
+      ApiUtil.fetchPosts();
+      ApiUtil.fetchCategories();
+    },
   });
 
   var routes = (
