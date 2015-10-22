@@ -1,7 +1,7 @@
 json.products @posts do |post|
   json.title post.title
   json.description post.description
-  json.price post.price
+  json.price number_with_delimiter(post.price)
   json.latitude post.latitude
   json.longitude post.longitude
   json.city post.city
