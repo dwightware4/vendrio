@@ -160,6 +160,6 @@ window.EditPost = React.createClass({
     };
     ApiUtil.editPost(this.state.post.id, options);
     imageUrls = [];
-    this.history.pushState(null, '/', {});
+    this.history.pushState(null, '/post/' + this.state.post.id);
   },
 });
