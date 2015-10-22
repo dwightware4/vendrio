@@ -61,7 +61,7 @@ window.PostForm = React.createClass({
     var options = {
       title: e.currentTarget.title.value,
       description: e.currentTarget.description.value,
-      price: parseInt(e.currentTarget.price.value),
+      price: parseInt(e.currentTarget.price.value.replace(/\$/g,'')),
       images: imageUrls,
       public_ids: test,
       latitude: e.currentTarget.lat.value,
