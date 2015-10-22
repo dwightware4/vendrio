@@ -17,8 +17,9 @@ window.Map = React.createClass({
     this.map = React.findDOMNode(this.refs.map);
 
     var mapOptions = {
-      center: {lat: 37.7758, lng: -122.435},
-      zoom: 13
+      center: {lat: 37.728873, lng: -122.441759},
+      zoom: 12,
+      styles: styles,
     };
 
     this.map = new google.maps.Map(this.map, mapOptions);
@@ -39,11 +40,6 @@ window.Map = React.createClass({
     }.bind(this));
 
     FilterParamsStore.addChangeListener(this._updateState);
-
-    // this.map.addListener('click', function(e) {
-    //   var coords = {lat: e.latLng.J, lng: e.latLng.M};
-    //   this.history.pushState(null, "/new", coords);
-    // }.bind(this));
   },
 
   clearMarkers: function() {
@@ -63,7 +59,7 @@ window.Map = React.createClass({
         position: LatLng,
         map: this.map,
         title: post.title,
-        icon: 'http://res.cloudinary.com/vendrio/image/upload/v1445474446/mall_pvr5ak.png',
+        icon: 'http://res.cloudinary.com/vendrio/image/upload/v1445539438/qr-code_ct9etm.png',
       });
 
       marker.addListener('click', function() {
@@ -74,3 +70,141 @@ window.Map = React.createClass({
     }.bind(this));
   },
 });
+
+var styles = [
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 13
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#144b53"
+            },
+            {
+                "lightness": 14
+            },
+            {
+                "weight": 1.4
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#08304b"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#0c4152"
+            },
+            {
+                "lightness": 5
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b434f"
+            },
+            {
+                "lightness": 25
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b3d51"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#146474"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#021019"
+            }
+        ]
+    }
+];
