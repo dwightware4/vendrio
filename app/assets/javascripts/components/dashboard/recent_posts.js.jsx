@@ -8,8 +8,8 @@ window.RecentPosts = React.createClass({
           {this.state.recentPosts.map(function(post){
 
             var postTitle = "";
-            if(post.title.length > 35){
-              postTitle = post.title.slice(0, 35) + "...";
+            if(post.title.length > 24){
+              postTitle = post.title.slice(0, 24) + "...";
             }else {
               postTitle = post.title;
             }
@@ -19,8 +19,8 @@ window.RecentPosts = React.createClass({
                 <a href={"#/post/" + post.id} className="thumbnail">
                   <img className="img-rounded" src={post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445537115/fc_550x550_white_tvu1dl.jpg"}/>
                   <div className="caption">
-                    <h6>{post.city}, {post.state}<span className="pull-right font-bold">${post.price}</span></h6>
-                    <h5>{postTitle}</h5>
+                    <h5>{postTitle}<span className="pull-right font-bold">${post.price}</span></h5>
+                    <h6>{post.city}, {post.state}<span className="pull-right text-small text-bold">{post.age} ago</span></h6>
                   </div>
                 </a>
 

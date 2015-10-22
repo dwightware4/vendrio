@@ -2,6 +2,9 @@ window.PostIndexItem = React.createClass({
   mixins: [ReactRouter.History],
 
   render: function () {
+    if(this.props.post.title.length > 33){
+      this.props.post.title = this.props.post.title.slice(0, 33) + "...";
+    }
     return(
       <li onClick={this.showPost} className="list-group-item">
 
