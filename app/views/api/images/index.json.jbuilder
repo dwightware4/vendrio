@@ -1,7 +1,7 @@
 json.products @posts do |post|
   json.title post.title
   json.description post.description
-json.price number_with_delimiter(post.price)
+  json.price number_with_delimiter(post.price)
   json.latitude post.latitude
   json.longitude post.longitude
   json.city post.city
@@ -9,6 +9,7 @@ json.price number_with_delimiter(post.price)
   json.user_id post.user_id
   json.category_id post.category_id
   json.id post.id
+  json.age time_ago_in_words(post.created_at)
 
   json.images post.images do |image|
     json.url image.url

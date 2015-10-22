@@ -33,7 +33,7 @@ window.PostShow = React.createClass({
 
               <div className="carousel-inner">
                 <div className="item active">
-                  <img className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445036262/no-image_pi8xii.png"}/>
+                  <img className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445537115/fc_550x550_white_tvu1dl.jpg"}/>
                 </div>
 
                 {this.state.post.images.map(function(image, idx){

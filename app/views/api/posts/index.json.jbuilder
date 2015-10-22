@@ -9,6 +9,7 @@ json.products @posts do |post|
   json.user_id post.user_id
   json.category_id post.category_id
   json.id post.id
+  json.age time_ago_in_words(post.created_at)
 
   json.images post.images do |image|
     json.url image.url
