@@ -1,4 +1,5 @@
 var allMarkers = [];
+var bounds = [];
 
 window.Map = React.createClass({
   mixins: [ReactRouter.History],
@@ -33,14 +34,16 @@ window.Map = React.createClass({
         lng: mapBounds.getSouthWest().lng()
       };
 
-      var bounds = {northEast: northEast, southWest: southWest};
+      bounds = {northEast: northEast, southWest: southWest};
       FilterActions.changeBounds(bounds);
     }.bind(this));
 
-    this.map.addListener('click', function(e) {
-      var coords = {lat: e.latLng.J, lng: e.latLng.M};
-      this.history.pushState(null, "/new", coords);
-    }.bind(this));
+    FilterParamsStore.addChangeListener(this._updateState);
+
+    // this.map.addListener('click', function(e) {
+    //   var coords = {lat: e.latLng.J, lng: e.latLng.M};
+    //   this.history.pushState(null, "/new", coords);
+    // }.bind(this));
   },
 
   clearMarkers: function() {
@@ -52,8 +55,7 @@ window.Map = React.createClass({
 
   _updateState: function(){
     this.clearMarkers();
-    var newPosts = PostStore.all();
-
+    var newPosts = PostStore.byBoundsAndCategory(bounds, catId);
     newPosts.forEach(function(post){
       var LatLng = {lat: post.latitude, lng: post.longitude};
       var marker = new google.maps.Marker({

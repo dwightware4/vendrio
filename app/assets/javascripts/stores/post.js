@@ -11,6 +11,18 @@
       return _posts.slice(0);
     },
 
+    byBoundsAndCategory: function(bounds, catId) {
+      var posts = [];
+
+        _posts.forEach(function(post){
+          if(post.latitude < bounds.northEast.lat && post.latitude > bounds.southWest.lat && post.longitude < bounds.northEast.lng && post.longitude > bounds.southWest.lng && post.category_id === catId){
+            posts.push(post);
+          }
+        });
+
+      return posts;
+    },
+
     recent: function() {
       return _posts.slice(0, 15);
     },

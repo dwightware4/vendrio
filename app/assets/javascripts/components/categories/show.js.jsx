@@ -1,3 +1,5 @@
+var catId = [];
+
 window.CategoryShow = React.createClass({
   mixins: [ReactRouter.History],
 
@@ -25,6 +27,7 @@ window.CategoryShow = React.createClass({
   },
 
   getInitialState: function() {
+    catId = CategoryStore.find(parseInt(this.props.params.categoryId)).id;
     return {
       category: CategoryStore.find(parseInt(this.props.params.categoryId)),
       posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))
@@ -32,6 +35,7 @@ window.CategoryShow = React.createClass({
   },
 
   _updateState: function(){
+    catId = CategoryStore.find(parseInt(this.props.params.categoryId)).id;
     this.setState({
       category: CategoryStore.find(parseInt(this.props.params.categoryId)),
       posts: PostStore.postsByCategory(parseInt(this.props.params.categoryId))
