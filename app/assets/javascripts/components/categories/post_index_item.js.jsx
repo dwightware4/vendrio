@@ -6,7 +6,7 @@ window.CatPostIndexItem = React.createClass({
       this.props.post.title = this.props.post.title.slice(0, 33) + "...";
     }
     return(
-      <li data-id={this.props.post.id} onClick={this.showPost} onMouseEnter={this.highlightMarkerToggle} onMouseLeave={this.highlightMarkerToggle} className="list-group-item">
+      <li data-id={this.props.post.id} onClick={this.showPost} onMouseEnter={this.addMarkerHighlight} onMouseLeave={this.removeMarkerHighlight} className="list-group-item">
 
         <div className="row">
           <div className="col-xs-4">
@@ -43,17 +43,21 @@ window.CatPostIndexItem = React.createClass({
     this.history.pushState(null, '/post/' + this.props.post.id);
   },
 
-  highlightMarkerToggle: function(e) {
+  addMarkerHighlight: function(e) {
     e.preventDefault();
-
     var postId = parseInt(e.currentTarget.dataset.id);
     var marker = allMarkers.find(function(marker){
       return marker.id === postId;
     }.bind(this));
-    if (marker.getAnimation() !== null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  },
+
+  removeMarkerHighlight: function(e) {
+    e.preventDefault();
+    var postId = parseInt(e.currentTarget.dataset.id);
+    var marker = allMarkers.find(function(marker){
+      return marker.id === postId;
+    }.bind(this));
+    marker.setAnimation(null);
   },
 });
