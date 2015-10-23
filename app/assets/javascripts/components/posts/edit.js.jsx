@@ -3,9 +3,10 @@ window.EditPost = React.createClass({
 
   render: function(){
     if(this.state.post === undefined) { return <div></div>; }
+      console.log(this.state.post.images.length);
+
     var imgId = this.state.post.images.length > 0 ? this.state.post.images[0].id : "";
 
-    if(this.state.post === undefined) { return <div></div>; }
     return(
       <div className="jumbotron">
         <div className="container">
@@ -42,7 +43,7 @@ window.EditPost = React.createClass({
 
           <div id="carousel-example-generic" className="carousel slide" data-interval="false">
             <ol className="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
+              <li key="0" data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
                 {this.state.post.images.map(function(image, idx){
                   if(idx > 0 && idx < 15){
                     return(
@@ -54,14 +55,13 @@ window.EditPost = React.createClass({
 
             <div className="carousel-inner">
               <div className="item active">
-                <img data-id={imgId} className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445620195/no_image_opkcui.jpg"}/>
+                <img key="0" data-id={imgId} className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445620195/no_image_opkcui.jpg"}/>
               </div>
               {this.state.post.images.map(function(image, idx){
                 if(idx > 0){
                   return(
                     <div key={idx} className="item">
-                      <img data-id={image.id} data-public-id={image.public_id} className="img-rounded" src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + image.url}/>
-
+                      <img data-id={image.id} className="img-rounded" src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + image.url}/>
                     </div>
                   );
                 }
@@ -88,6 +88,15 @@ window.EditPost = React.createClass({
         </div>
       </div>
     );
+  },
+
+  componentDidUpdate: function () {
+    var active;
+    var items = document.getElementsByClassName('carousel-inner')[0].getElementsByClassName('item');
+    for(var i = 0; i < items.length; i++) {
+      if(items[i].className.match('active')) { active = true; }
+    }
+    if(!active) { items[0].className += ' active'; }
   },
 
   getInitialState: function() {
