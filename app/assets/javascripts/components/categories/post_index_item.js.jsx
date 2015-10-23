@@ -10,7 +10,7 @@ window.CatPostIndexItem = React.createClass({
 
         <div className="row">
           <div className="col-xs-4">
-                  <img className="img-rounded" src={this.props.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_100,w_120/" + this.props.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_100,w_120/v1445537115/fc_550x550_white_tvu1dl.jpg"}/>
+                  <img className="img-rounded" src={this.props.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_100,w_120/" + this.props.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_100,w_120/v1445620195/no_image_opkcui.jpg"}/>
           </div>
 
           <div className="col-xs-5 move-down-1">

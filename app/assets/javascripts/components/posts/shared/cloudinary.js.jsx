@@ -17,7 +17,7 @@ window.Cloudinary = React.createClass({
         cloud_name: 'vendrio',
         upload_preset: 'isuzt2ap',
         cropping: 'server', 'folder': 'user_photos',
-        stylesheet: 'minimal',
+        theme: 'minimal',
       },
       function(error, result) { this.setImageUrl(error, result); }.bind(this));
   },

@@ -36,6 +36,11 @@ class Api::PostsController < ApplicationController
     post = Post.find(params[:id])
     if post
       post.update(post_params)
+      if params[:images]
+        params[:images].each do |image|
+          Image.create!({url: image, post_id: post.id})
+        end
+      end
       @posts = Post.all.order(created_at: :desc)
       render :index
     end
