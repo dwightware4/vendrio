@@ -28,19 +28,19 @@ window.SearchIndex = React.createClass({
 
   getInitialState: function() {
     return {
-      posts: PostStore.postsByCategoryAndKeywords(parseInt(this.props.location.query.category_id), this.props.location.query.keywords)
+      posts: PostStore.postsByCategoryAndKeywords(SearchParamsStore.categoryId(), SearchParamsStore.keywords())
     };
   },
 
   _updateState: function(){
-    this.setState({posts: PostStore.postsByCategoryAndKeywords(parseInt(this.props.location.query.category_id), this.props.location.query.keywords)});
+    this.setState({posts: PostStore.postsByCategoryAndKeywords(SearchParamsStore.categoryId(), SearchParamsStore.keywords())});
   },
 
   componentDidMount: function() {
-    PostStore.addChangeListener(this._updateState);
+    SearchParamsStore.addChangeListener(this._updateState);
   },
 
   componentWillUnmount: function() {
-    PostStore.removeChangeListener(this._updateState);
+    SearchParamsStore.removeChangeListener(this._updateState);
   },
 });

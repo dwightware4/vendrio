@@ -79,7 +79,8 @@ window.NavBar = React.createClass({
   performSearch: function(e) {
     e.preventDefault();
     var keywords = e.currentTarget.keywords.value.replace(/\W/g,'').split(' ');
-    var category_id = e.currentTarget.category.value;
-    this.history.pushState(null, '/search/', {keywords: keywords, category_id: category_id});
+    var categoryId = parseInt(e.currentTarget.category.value);
+    SearchActions.changeSearchParams({keywords: keywords, categoryId: categoryId});
+    this.history.pushState(null, '/search/');
   },
 });

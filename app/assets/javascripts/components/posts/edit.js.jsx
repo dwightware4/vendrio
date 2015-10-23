@@ -3,8 +3,7 @@ window.EditPost = React.createClass({
 
   render: function(){
     if(this.state.post === undefined) { return <div></div>; }
-      console.log(this.state.post.images.length);
-
+    var hidden = this.state.post.images.length > 0 ? "" : " hidden";
     var imgId = this.state.post.images.length > 0 ? this.state.post.images[0].id : "";
 
     return(
@@ -76,11 +75,11 @@ window.EditPost = React.createClass({
             </a>
           </div>
 
-          <div className="overlay">
-            <button onClick={this.deleteImage} className="btn carousel-button btn-danger center-block move-down-20">
-              <i className="fa fa-exchange"></i> Delete Photo
-            </button>
-          </div>
+            <div className="overlay">
+              <button onClick={this.deleteImage} className={"btn carousel-button btn-danger center-block move-down-20" + hidden}>
+                <i className="fa fa-exchange"></i> Delete Photo
+              </button>
+            </div>
 
         </div>
 {/* end image carousel */}

@@ -6,3 +6,7 @@ PostConstants = {
 FilterConstants = {
   FILTER_BOUNDS_CHANGE: 'FILTER_BOUNDS_CHANGE'
 };
+
+SearchConstants = {
+  SEARCH_PARAMS_CHANGE: 'SEARCH_PARAMS_CHANGE'
+};
