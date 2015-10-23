@@ -13,7 +13,7 @@ window.CategoryShow = React.createClass({
             <div>
               <ul>
                 {this.state.posts.map(function(post){
-                  return <PostIndexItem key={post.id} post={post} />;
+                  return <CatPostIndexItem key={post.id} post={post} />;
                 })}
               </ul>
             </div>

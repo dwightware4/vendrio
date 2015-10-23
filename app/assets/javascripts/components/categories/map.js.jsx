@@ -44,7 +44,7 @@ window.Map = React.createClass({
   clearMarkers: function() {
     for(var i = 0; i < allMarkers.length; i++){
       allMarkers[i].setMap(null);
-      allMarkers.slice(i, 1);
+      allMarkers = allMarkers.slice(i, 1);
     }
   },
 
@@ -58,6 +58,8 @@ window.Map = React.createClass({
         position: LatLng,
         map: this.map,
         title: post.title,
+        id: post.id,
+        animation: null,
         icon: 'http://res.cloudinary.com/vendrio/image/upload/v1445539438/qr-code_ct9etm.png',
       });
 
