@@ -3,6 +3,8 @@ window.PostShow = React.createClass({
 
   render: function(){
     if(this.state.post === undefined) { return <div></div>; }
+    var status = this.state.post.user_id === window.userId ? "" : " hidden";
+
     return(
       <div className="jumbotron">
         <div className="row">
@@ -13,8 +15,8 @@ window.PostShow = React.createClass({
             <p>Price: ${this.state.post.price}</p><br/>
             <p>Location: {this.state.post.city}, {this.state.post.state}</p><br/>
 
-            <button className="btn btn-default navbar-btn" onClick={this.deletePost} value={this.state.post.id}>Delete Post</button>
-            <button className="btn btn-default navbar-btn" onClick={this.editPost} value={this.state.post.id}>Edit Post</button>
+            <button className={"btn btn-default navbar-btn" + status} onClick={this.deletePost} value={this.state.post.id}>Delete Post</button>
+            <button className={"btn btn-default navbar-btn" + status} onClick={this.editPost} value={this.state.post.id}>Edit Post</button>
           </div>
 
           <div className="col-xs-6 move-down-75">

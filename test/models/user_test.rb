@@ -8,6 +8,9 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  email           :string
+#  f_name          :string
+#  l_name          :string
 #
 
 require 'test_helper'

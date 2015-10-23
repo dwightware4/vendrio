@@ -20,6 +20,13 @@
 
 <body class="main">
 
+<% if current_user %>
+  <script>
+    window.userFirstName = "<%= current_user.f_name %>"
+    window.userId = <%= current_user.id %>
+  </script>
+<% end %>
+
 <!-- <% unless current_user %>
   <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
     <iframe frameborder="0" height="100%" width="100%"
