@@ -31,21 +31,19 @@ window.NavBar = React.createClass({
 
             <form onSubmit={this.performSearch} className="navbar-form navbar-left" role="search">
               <div className="form-group">
-
-                  <select className="btn btn-default dropdown-toggle" name="category">
-                    <option value="-1">Specify Category</option>
-                    <option value="-1">All</option>
-                      {
-                        this.state.categories.map(function(category){
-                          return <option key={category.id} value={category.id}>{category.title}</option>;
-                        })
-                      }
-                  </select>
-
                 <input type="text" name="keywords" className="form-control" placeholder="Search terms..." ></input>
-
               </div>
               <button type="submit" className="btn btn-default">Search</button>
+
+                <select className="btn btn-default dropdown-toggle" name="category">
+                  <option value="-1">Search by Category</option>
+                  <option value="-1">All</option>
+                    {
+                      this.state.categories.map(function(category){
+                        return <option key={category.id} value={category.id}>{category.title}</option>;
+                      })
+                    }
+                </select>
             </form>
 
             <ul className="nav navbar-nav navbar-right">

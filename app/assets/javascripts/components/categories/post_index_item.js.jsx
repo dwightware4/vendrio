@@ -6,7 +6,7 @@ window.CatPostIndexItem = React.createClass({
       this.props.post.title = this.props.post.title.slice(0, 33) + "...";
     }
     return(
-      <li data-id={this.props.post.id} onClick={this.showPost} onMouseEnter={this.addMarkerHighlight} onMouseLeave={this.removeMarkerHighlight} className="list-group-item">
+      <li data-id={this.props.post.id} onClick={this.showPost} onMouseEnter={this.addMarkerHighlight} onMouseLeave={this.removeMarkerHighlight} className="list-group-item cursor-pointer">
 
         <div className="row">
           <div className="col-xs-4">
