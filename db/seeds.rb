@@ -27,7 +27,8 @@ cat26 = Category.create(title: "Tools")
 cat27 = Category.create(title: "Video Games")
 cat28 = Category.create(title: "Wanted")
 
-user1 = User.create(username: "Guest", password: "password", email: "guest@example.com", f_name: "Guest", l_name: "Smith")
+user1 = User.create(username: "Dummy", password: "walnutcreek", email: "dummy@example.com", f_name: "Dummy", l_name: "User")
+user2 = User.create(username: "Guest", password: "password", email: "guest@example.com", f_name: "Guest", l_name: "User")
 
 post1 = Post.create(
   title: "iPhone 7S",
