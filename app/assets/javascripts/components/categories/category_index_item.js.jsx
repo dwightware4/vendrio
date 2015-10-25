@@ -3,7 +3,7 @@ window.CategoryIndexItem = React.createClass({
 
   render: function () {
     return(
-      <li onClick={this.showCategory} className="list-group-item">
+      <li onClick={this.showCategory} className="list-group-item cursor-pointer">
         {this.props.category.title} <span className="badge">{PostStore.postsByCategory(this.props.category.id).length}</span>
       </li>
     );
