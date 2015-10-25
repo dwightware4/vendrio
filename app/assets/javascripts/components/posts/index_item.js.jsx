@@ -6,7 +6,7 @@ window.PostIndexItem = React.createClass({
       this.props.post.title = this.props.post.title.slice(0, 33) + "...";
     }
     return(
-      <li onClick={this.showPost} className="list-group-item">
+      <li onClick={this.showPost} className="list-group-item cursor-pointer">
 
         <div className="row">
           <div className="col-xs-4">

@@ -2,6 +2,7 @@ window.SearchIndex = React.createClass({
   mixins: [ReactRouter.History],
 
   render: function(){
+    if(SearchParamsStore.keywords() === null) {return <div></div>;}
     if(this.state.posts.length === 0){
       return(
         <div className="jumbotron">
