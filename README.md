@@ -15,7 +15,7 @@ Vendrio is an online marketplace inspired in part by Craigslist and in part by R
 - [ ] Create, read, edit, and delete posts (classified ads)
 - [ ] Browse posts by category and location
 - [ ] Upvote posts that are high quality/well priced/etc
-- [ ] Downvote posts that are poor quality/overpriced/etc
+- [x] Downvote posts that are poor quality/overpriced/etc
 
 ## Design Docs
 * [View Wireframes][view]
