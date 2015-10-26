@@ -5,14 +5,21 @@
       <form action="<%= session_url %>" method="post">
         <%= auth_token %>
         <div class="form-group">
-          <input class="form-control" type="text" name="user[username]" value="Guest">
+          <input class="form-control" type="text" name="user[username]" placeholder="Username...">
 
-          <input class="form-control" type="password" name="user[password]" value="password">
+          <input class="form-control" type="password" name="user[password]" placeholder="Password...">
 
           <input class="form-control btn btn-primary" type="submit" value="Sign In">
         </div>
-        <h3>The Marketplace of the Future!</h3>
       </form><br>
+
+      <form action="<%= session_url %>" method="post">
+        <%= auth_token %>
+        <input class="form-control" type="hidden" name="user[username]" value="Guest">
+        <input class="form-control" type="hidden" name="user[password]" value="password">
+        <input class="form-control btn btn-primary" type="submit" value="Sign In as Guest">
+        <h3>The Marketplace of the Future!</h3>
+      </form>
 
       <div>
         <%= link_to "Sign Up", new_user_url %>
