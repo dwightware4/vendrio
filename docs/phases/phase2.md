@@ -18,12 +18,10 @@
 
 ### Actions
 * ApiActions.receiveAllPosts
-* ApiActions.receiveSinglePost
 * ApiActions.deletePost
 
 ### ApiUtil
 * ApiUtil.fetchAllPosts
-* ApiUtil.fetchSinglePost
 * ApiUtil.createPost
 * ApiUtil.editPost
 * ApiUtil.destroyPost
