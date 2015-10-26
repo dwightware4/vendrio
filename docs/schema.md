@@ -9,6 +9,8 @@ description | text      | not null
 latitude    | float     | not null
 longitude   | float     | not null
 price       | integer   | not null
+city        | string    |
+state       | string    |
 user_id     | integer   | not null, foreign key (references users), indexed
 category_id | integer   | not null, foreign key (references categories), indexed
 
@@ -25,11 +27,13 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+email           | string    |
+f_name          | string    |
+l_name          | string    |
 
-## karma
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-user_id         | integer   | not null, foreign key (references users), indexed, unique w/post_id
-post_id         | integer   | not null, foreign key (references posts), indexed, unique w/user_id
-value           | integer   | not null,
+## images
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+post_id     | integer   | not null, foreign key
+url         | string    | not null
