@@ -14,7 +14,6 @@
 * users/new.html.erb
 * sessions/new.html.erb
 * api/posts/index.json.jbuilder
-* posts/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
@@ -24,6 +23,7 @@
 ### Actions
 
 ### ApiUtil
+* ApiUtil.signOut
 
 ## Gems/Libraries
 * BCrypt

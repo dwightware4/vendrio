@@ -5,28 +5,25 @@
 * Category
 
 ### Controllers
-* Api::CategoriesController (create, index, show)
+* Api::CategoriesController (index)
 
 ### Views
-* categories/index.json.jbuilder
-* categories/show.json.jbuilder
-
 
 ## Flux
 ### Views (React Components)
-* CategoriesIndex
+* CategoryIndex
   - CategoryIndexItem
-* SearchIndex
+* CategoryShow
+  - CatPostIndexItem
+  - Map
 
 ### Stores
 * Category
 
 ### Actions
-* ApiActions.receiveAllCategories
-* ApiActions.receiveSingleCategory
+* ApiActions.receiveCategories
 
 ### ApiUtil
-* ApiUtil.fetchAllCategories
-* ApiUtil.fetchSingleCategory
+* ApiUtil.fetchCategories
 
 ## Gems/Libraries

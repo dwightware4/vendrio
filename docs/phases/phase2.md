@@ -9,23 +9,31 @@
 
 ## Flux
 ### Views (React Components)
-* PostsIndex
-  - PostsIndexItem
-* PostForm
+* Dashboard
+  - Dashboard
+  - Jumbotron
+  - RecentPosts
+  - Sidebar
+* Posts
+  - PostShow
+  - PostForm (new post)
+  - PostIndexItem
+  - PostIndex
+  - Cloudinary
+  - GeoComplete
 
 ### Stores
 * Post
 
 ### Actions
-* ApiActions.receiveAllPosts
-* ApiActions.deletePost
+* ApiActions.receivePosts
 
 ### ApiUtil
-* ApiUtil.fetchAllPosts
+* ApiUtil.fetchPosts
 * ApiUtil.createPost
 * ApiUtil.editPost
-* ApiUtil.destroyPost
+* ApiUtil.deletePost
 
 ## Gems/Libraries
 * Flux Dispatcher
-* Twitter Bootstrap
+* React Router

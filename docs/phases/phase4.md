@@ -2,24 +2,22 @@
 
 ## Rails
 ### Models
-* Karma
+* Image
 
 ### Controllers
-* Api::KarmaController (create, update)
+* Api::ImagesController (destroy)
 
 ### Views
-* karma/show.json.jbuilder
+* api/images/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
 
 ### Stores
-* Karma
 
 ### Actions
-* ApiActions.receiveAllKarma
 
 ### ApiUtil
-* ApiUtil.fetchAllKarma
+* ApiUtil.deleteImage
 
 ## Gems/Libraries
