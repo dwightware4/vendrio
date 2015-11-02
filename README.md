@@ -15,9 +15,9 @@ Vendrio is an online marketplace inspired by Craigslist. It is built using Ruby 
 - [x] Search posts by category and keywords
 - [x] Create, read, edit, and delete images associated with posts
 
-# Code Sample
+# Code Samples
 
-This code shows my use of jbuilder to optimize AJAX requests to the server.
+This code shows my use of jbuilder to reduce AJAX requests to the server.
 ![alt tag](docs/screenshots/jbuilder.png)
 
 Here is my React Router configuration.
@@ -71,6 +71,7 @@ Phase 5 will involve styling the app using CSS and bootstrap, as well as buildin
 - [ ] Refactor code
 - [ ] Add footer
 - [ ] Add contact mechanism between sellers and buyers
+- [ ] Make search input scrubbing more robust
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
