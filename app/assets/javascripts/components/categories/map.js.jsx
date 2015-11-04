@@ -60,7 +60,7 @@ window.Map = React.createClass({
         map: this.map,
         id: post.id,
         animation: null,
-        icon: 'https://res.cloudinary.com/vendrio/image/upload/v1445539438/qr-code_ct9etm.png',
+        icon: 'https://res.cloudinary.com/'+window.cloudinary_name+'/image/upload/v1445539438/qr-code_ct9etm.png',
       });
 
       var infowindow = new google.maps.InfoWindow({

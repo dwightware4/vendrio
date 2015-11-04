@@ -14,8 +14,8 @@ window.Cloudinary = React.createClass({
   componentDidMount: function() {
     $('#upload_widget_opener').cloudinary_upload_widget(
       {
-        cloud_name: 'vendrio',
-        upload_preset: 'isuzt2ap',
+        cloud_name: window.cloudinary_name,
+        upload_preset: window.cloudinary_preset,
         cropping: 'server', 'folder': 'user_photos',
         theme: 'minimal',
       },

@@ -17,7 +17,8 @@ window.RecentPosts = React.createClass({
               <div key={post.id} className="col-xs-4 test-class-name">
 
                 <a href={"#/post/" + post.id} className="thumbnail">
-                  <img className="img-rounded" src={post.images.length > 0 ? "https://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + post.images[0].url : "https://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445620195/no_image_opkcui.jpg"}/>
+                  <img className="img-rounded" src={post.images.length > 0 ?
+                      "https://res.cloudinary.com/"+window.cloudinary_name+"/image/upload/c_fill,h_250,w_300/" + post.images[0].url : "https://res.cloudinary.com/"+window.cloudinary_name+"/image/upload/c_fill,h_250,w_300/v1445620195/no_image_opkcui.jpg"}/>
                   <div className="caption">
                     <h5>{postTitle}<span className="pull-right font-bold">${post.price}</span></h5>
                     <h6>{post.city}, {post.state}<span className="pull-right text-small text-bold">{post.age} ago</span></h6>
