@@ -7,6 +7,21 @@
 @import "bootstrap";
 @import "theme";
 
+#marker-info {
+  color: black;
+  font-weight: bold;
+  text-shadow: none;
+  text-align: right;
+}
+
+.gm-style-iw + div {
+  display: none;
+}
+
+div.marker-info img {
+  display: none;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }

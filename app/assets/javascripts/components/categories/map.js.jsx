@@ -58,11 +58,23 @@ window.Map = React.createClass({
       var marker = new google.maps.Marker({
         position: LatLng,
         map: this.map,
-        title: post.title,
         id: post.id,
         animation: null,
         icon: 'https://res.cloudinary.com/vendrio/image/upload/v1445539438/qr-code_ct9etm.png',
       });
+
+      var infowindow = new google.maps.InfoWindow({
+        content: "<div id='marker-info'>" + post.title + "</div>",
+        disableAutoPan: true
+      });
+
+      marker.addListener('mouseover', function() {
+        infowindow.open(marker.map, marker);
+      }.bind(this));
+
+      marker.addListener('mouseout', function() {
+        infowindow.close(marker.map, marker);
+      }.bind(this));
 
       marker.addListener('click', function() {
         this.history.pushState(null, '/post/' + post.id);
