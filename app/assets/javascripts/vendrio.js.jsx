@@ -31,5 +31,7 @@ $(function() {
         <Route path="search" component={SearchIndex} />
       </Route>
   );
-  React.render(<Router>{routes}</Router>, root);
+  if(root){
+    React.render(<Router>{routes}</Router>, root);
+  }
 });

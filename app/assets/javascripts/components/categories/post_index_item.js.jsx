@@ -49,7 +49,9 @@ window.CatPostIndexItem = React.createClass({
     var marker = allMarkers.find(function(marker){
       return marker.id === postId;
     }.bind(this));
-    marker.setAnimation(google.maps.Animation.BOUNCE);
+    if(marker){
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
   },
 
   removeMarkerHighlight: function(e) {
@@ -58,6 +60,8 @@ window.CatPostIndexItem = React.createClass({
     var marker = allMarkers.find(function(marker){
       return marker.id === postId;
     }.bind(this));
-    marker.setAnimation(null);
+    if(marker) {
+      marker.setAnimation(null);
+    }
   },
 });
