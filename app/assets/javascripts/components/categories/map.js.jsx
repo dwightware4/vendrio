@@ -61,7 +61,7 @@ window.Map = React.createClass({
         title: post.title,
         id: post.id,
         animation: null,
-        icon: 'http://res.cloudinary.com/vendrio/image/upload/v1445539438/qr-code_ct9etm.png',
+        icon: 'https://res.cloudinary.com/vendrio/image/upload/v1445539438/qr-code_ct9etm.png',
       });
 
       marker.addListener('click', function() {
