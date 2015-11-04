@@ -1,3 +1,6 @@
+user1 = User.create(username: ENV["dummy_username"], password: ENV["dummy_password"], email: "dummy@example.com", f_name: "Dummy", l_name: "User")
+user2 = User.create(username: ENV["guest_username"], password: ENV["guest_password"], email: "guest@example.com", f_name: "Guest", l_name: "User")
+
 cat1 = Category.create(title: "Appliances")
 cat2 = Category.create(title: "Art")
 cat3 = Category.create(title: "Boats")
@@ -18,9 +21,6 @@ cat17 = Category.create(title: "Robots")
 cat18 = Category.create(title: "Tickets")
 cat19 = Category.create(title: "Tools")
 cat20 = Category.create(title: "Video Games")
-
-user1 = User.create(username: "Dummy", password: "walnutcreek", email: "dummy@example.com", f_name: "Dummy", l_name: "User")
-user2 = User.create(username: "Guest", password: "password", email: "guest@example.com", f_name: "Guest", l_name: "User")
 
 post1 = Post.create(
   title: "iPhone 11S",
