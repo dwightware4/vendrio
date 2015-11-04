@@ -54,13 +54,13 @@ window.EditPost = React.createClass({
 
             <div className="carousel-inner">
               <div className="item active">
-                <img key="0" data-id={imgId} className="img-rounded" src={this.state.post.images.length > 0 ? "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445620195/no_image_opkcui.jpg"}/>
+                <img key="0" data-id={imgId} className="img-rounded" src={this.state.post.images.length > 0 ? "https://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + this.state.post.images[0].url : "https://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/v1445620195/no_image_opkcui.jpg"}/>
               </div>
               {this.state.post.images.map(function(image, idx){
                 if(idx > 0){
                   return(
                     <div key={idx} className="item">
-                      <img data-id={image.id} className="img-rounded" src={"http://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + image.url}/>
+                      <img data-id={image.id} className="img-rounded" src={"https://res.cloudinary.com/vendrio/image/upload/c_fill,h_250,w_300/" + image.url}/>
                     </div>
                   );
                 }
