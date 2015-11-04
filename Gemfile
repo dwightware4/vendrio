@@ -15,6 +15,7 @@ gem 'puma'
 gem 'react-rails', '~> 1.3.0'
 gem 'flux-rails-assets'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
