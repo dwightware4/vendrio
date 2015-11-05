@@ -1,5 +1,5 @@
-user1 = User.create(username: ENV["dummy_username"], password: ENV["dummy_password"], email: "dummy@example.com", f_name: "Dummy", l_name: "User")
-user2 = User.create(username: ENV["guest_username"], password: ENV["guest_password"], email: "guest@example.com", f_name: "Guest", l_name: "User")
+user1 = User.create(username: "user1", password: "password1", email: "dummy@example.com", f_name: "Dummy", l_name: "User")
+user2 = User.create(username: "Guest", password: "password", email: "guest@example.com", f_name: "Guest", l_name: "User")
 
 cat1 = Category.create(title: "Appliances")
 cat2 = Category.create(title: "Art")
