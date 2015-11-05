@@ -27,7 +27,7 @@ window.RecentPosts = React.createClass({
 
               </div>
             );
-          }.bind(this))};
+          }.bind(this))}
         </div>
       </div>
     );

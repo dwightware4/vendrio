@@ -111,18 +111,25 @@ label {
     text-shadow: black 0.3em 0.3em 0.3em;
 }
 
-body {
+body.main {
      margin: 0;
      background-size: cover;
      background-repeat:no-repeat;
+     background-color: #000;
      background-image: url(https://res.cloudinary.com/vendrio/image/upload/v1445036283/ubPzo5Z_s0h7kt.jpg);
      display: compact;
      font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-
-
-
+body.main-login {
+     margin: 0;
+     background-size: cover;
+     background-repeat:no-repeat;
+     background-color: #000;
+     background-image: url('http://data.hdwallpapers.im/new_york_in_blue.jpg');
+     display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 body.stop-scrolling {
   height: 100%;
